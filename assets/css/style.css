@@ -1,11 +1,15 @@
 /* ==========================================================================
-   NOREMO — design system
+   DAWN EXIT — design system
    Dark, cinematic base theme, signal-blue single accent, top-right nav.
    ========================================================================== */
 
 :root {
   --accent: #378ADD;
   --accent-bright: #5AA3E8;
+  --navy-deep: #042C53;
+  --mid-blue: #185FA5;
+  --pale-blue: #85B7EB;
+  --icon-line: #E6F1FB;
   --off-black: #0B0B0C;
   --panel-black: #131315;
   --line: rgba(255, 255, 255, 0.1);
@@ -117,20 +121,39 @@ p { margin: 0; }
 .brand {
   display: flex;
   align-items: center;
-  gap: 10px;
+  gap: 11px;
   font-family: var(--font-display);
-  font-weight: 700;
-  font-size: 20px;
-  letter-spacing: 0.02em;
   color: var(--white);
 }
 
-.brand-mark {
-  width: 11px;
-  height: 11px;
-  background: var(--accent);
-  display: inline-block;
+.brand-icon {
+  width: 32px;
+  height: 32px;
+  border-radius: 8px;
+  background: var(--navy-deep);
+  display: flex;
+  align-items: center;
+  justify-content: center;
   flex-shrink: 0;
+}
+.brand-icon-lg {
+  width: 56px;
+  height: 56px;
+  border-radius: 14px;
+}
+.brand-icon-lg svg { width: 30px; height: 30px; }
+
+.wordmark {
+  font-weight: 500;
+  font-size: 19px;
+  letter-spacing: -0.5px;
+  white-space: nowrap;
+}
+.word-dawn { color: var(--white); }
+.word-exit { color: var(--accent); }
+
+.wordmark-lg {
+  font-size: 32px;
 }
 
 .nav-links {
@@ -884,20 +907,21 @@ a.contact-route:hover { background: rgba(55,138,221,0.08); }
   position: relative;
   z-index: 2;
   display: flex;
+  flex-direction: column;
   align-items: center;
-  gap: 14px;
+  gap: 18px;
   opacity: 0;
   transform: scale(0.92);
   transition: opacity 0.7s var(--ease), transform 0.7s var(--ease);
 }
 .intro-mark.is-in { opacity: 1; transform: scale(1); }
-.intro-mark .brand-mark { width: 16px; height: 16px; }
-.intro-mark span {
-  font-family: var(--font-display);
-  font-weight: 700;
-  font-size: 30px;
-  letter-spacing: 0.06em;
-  color: var(--white);
+
+.intro-tagline {
+  font-family: var(--font-mono);
+  font-size: 12px;
+  letter-spacing: 0.3em;
+  text-transform: uppercase;
+  color: var(--grey);
 }
 
 /* --------------------------------- Responsive -------------------------------- */
