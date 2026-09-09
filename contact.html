@@ -8,7 +8,7 @@
 
 <link rel="preconnect" href="https://fonts.googleapis.com" />
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
-<link href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@500;600;700&family=Inter:wght@400;500;600;700&family=JetBrains+Mono:wght@400;500&display=swap" rel="stylesheet" />
+<link href="https://fonts.googleapis.com/css2?family=Fraunces:ital,wght@0,300..600;1,300..600&family=Work+Sans:wght@400;500;600;700&family=JetBrains+Mono:wght@400;500&display=swap" rel="stylesheet" />
 <link rel="stylesheet" href="assets/css/style.css" />
 </head>
 <body>
@@ -32,7 +32,7 @@
 </nav>
 
 <header class="page-hero" style="min-height:48vh;">
-  <div class="hero-bg" aria-hidden="true"></div>
+  <div class="sky-dawn" aria-hidden="true"></div>
   <div class="container">
     <p class="eyebrow reveal">Contact</p>
     <h1 class="reveal reveal-delay-1">Have a question, a collaboration idea, or simply want to say hello?</h1>
@@ -79,7 +79,10 @@
           <input type="checkbox" id="terms" name="terms" required />
           <label for="terms" style="margin:0;font-family:var(--font-body);text-transform:none;letter-spacing:normal;">I agree to Dawn Exit's <a href="#" class="link-arrow" style="display:inline;">Privacy Policy</a> and consent to being contacted.</label>
         </div>
-        <button type="submit" class="btn btn-primary">Send message <span class="btn-arrow">&#8599;</span></button>
+        <button type="submit" class="btn-split" style="background:none;padding:0;cursor:pointer;">
+          <span class="btn-split-label">Send message</span>
+          <span class="btn-split-icon"><svg width="16" height="16" viewBox="0 0 24 24" fill="none"><path d="M7 17L17 7M17 7H9M17 7V15" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"/></svg></span>
+        </button>
         <p class="form-note">We typically respond within one business day.</p>
       </form>
 
@@ -143,6 +146,7 @@
         </div>
       </div>
     </div>
+    <div class="footer-wordmark" aria-hidden="true">dawnexit</div>
     <div class="footer-bottom">
       <span>&copy; <span id="year"></span> Dawn Exit — a trading name of Noremo UK Ltd. All rights reserved.</span>
       <span>ICO registration Z200837X · <a href="#">Privacy Policy</a></span>

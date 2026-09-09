@@ -8,7 +8,7 @@
 
 <link rel="preconnect" href="https://fonts.googleapis.com" />
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
-<link href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@500;600;700&family=Inter:wght@400;500;600;700&family=JetBrains+Mono:wght@400;500&display=swap" rel="stylesheet" />
+<link href="https://fonts.googleapis.com/css2?family=Fraunces:ital,wght@0,300..600;1,300..600&family=Work+Sans:wght@400;500;600;700&family=JetBrains+Mono:wght@400;500&display=swap" rel="stylesheet" />
 <link rel="stylesheet" href="assets/css/style.css" />
 </head>
 <body>
@@ -19,7 +19,7 @@
   <div class="intro-horizon"></div>
   <div class="intro-mark">
     <span class="brand-icon brand-icon-lg" aria-hidden="true">
-      <svg viewBox="0 0 24 24" width="30" height="30" fill="none">
+      <svg viewBox="0 0 24 24" width="32" height="32" fill="none">
         <path d="M3 12L12 4L21 12" stroke="#E6F1FB" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round"/>
         <path d="M6 20H18" stroke="#378ADD" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round"/>
       </svg>
@@ -48,13 +48,16 @@
 </nav>
 
 <header class="hero">
-  <div class="hero-bg" aria-hidden="true"></div>
+  <div class="sky-dawn" aria-hidden="true"></div>
   <div class="container hero-inner">
     <p class="eyebrow reveal">Tech Due Diligence · Tech Strategy · Exit Preparation</p>
     <h1 class="hero-title reveal reveal-delay-1">Driving business efficiencies with <em>software + AI</em></h1>
     <p class="hero-sub reveal reveal-delay-2">We help Private Equity firms and their portfolio companies de-risk acquisitions and accelerate value creation — through Tech Due Diligence, Tech Strategy, and Exit Preparation.</p>
     <div class="hero-actions reveal reveal-delay-3">
-      <a href="contact.html" class="btn btn-primary">Get in touch <span class="btn-arrow">&#8599;</span></a>
+      <a href="contact.html" class="btn-split">
+        <span class="btn-split-label">Get in touch</span>
+        <span class="btn-split-icon"><svg width="16" height="16" viewBox="0 0 24 24" fill="none"><path d="M7 17L17 7M17 7H9M17 7V15" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"/></svg></span>
+      </a>
       <a href="services.html" class="link-arrow">Explore our services <span>&#8594;</span></a>
     </div>
     <div class="hero-meta reveal reveal-delay-3">
@@ -77,7 +80,7 @@
 <section class="section">
   <div class="container">
     <div class="section-head reveal">
-      <p class="eyebrow">01 — Who we are</p>
+      <p class="eyebrow">Who we are</p>
       <h2>Great values. Great team. Real-world experience, applied practically.</h2>
       <p>Matt, Rob and Ian bring 25+ years each in enterprise technology, consulting and Private Equity — including senior roles at IBM, Accenture, Telenor, and hands-on experience taking companies through scale-up and exit.</p>
     </div>
@@ -85,28 +88,25 @@
   </div>
 </section>
 
-<section class="section section-alt">
+<section class="section section-light">
   <div class="container">
     <div class="section-head reveal">
-      <p class="eyebrow">02 — What we do</p>
+      <p class="eyebrow">What we do</p>
       <h2>Three disciplines, one Scale-up to Exit journey.</h2>
     </div>
-    <div class="grid grid-3 reveal">
-      <div class="grid-cell">
-        <span class="feature-num">01</span>
-        <div class="feature-icon">TD</div>
+    <div class="feature-cols feature-cols-3 reveal">
+      <div class="feature-col">
+        <svg class="feature-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"><circle cx="10" cy="10" r="6"/><path d="M20 20l-5-5"/></svg>
         <h3>Tech Due Diligence</h3>
         <p>De-risking acquisitions for PE and corporate buyers.</p>
       </div>
-      <div class="grid-cell">
-        <span class="feature-num">02</span>
-        <div class="feature-icon">TS</div>
+      <div class="feature-col">
+        <svg class="feature-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="9"/><path d="M15.5 8.5l-2 5.5-5.5 2 2-5.5 5.5-2z"/></svg>
         <h3>Tech Strategy</h3>
         <p>Helping business leaders plan and fund their next years of growth.</p>
       </div>
-      <div class="grid-cell">
-        <span class="feature-num">03</span>
-        <div class="feature-icon">EP</div>
+      <div class="feature-col">
+        <svg class="feature-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"><path d="M5 21V4"/><path d="M5 5h13l-3 4 3 4H5"/></svg>
         <h3>Exit Preparation</h3>
         <p>Getting companies ready for sale, faster and with less friction.</p>
       </div>
@@ -120,7 +120,7 @@
 <section class="section">
   <div class="container">
     <div class="section-head reveal">
-      <p class="eyebrow">03 — Who we work with</p>
+      <p class="eyebrow">Who we work with</p>
       <h2 style="font-size:clamp(24px,3vw,32px);">Mid-market Private Equity investors and their Growth Company portfolio businesses.</h2>
       <p>Across Aviation, Energy, Insurance, Telecoms, Transportation and their supply, sales and service networks.</p>
     </div>
@@ -131,7 +131,11 @@
 <section class="cta-band reveal">
   <div class="container">
     <h2>Have a question, a collaboration idea, or want to say hello? We'd love to hear from you.</h2>
-    <a href="contact.html" class="btn btn-primary">Get in touch <span class="btn-arrow">&#8599;</span></a>
+    <p>&nbsp;</p>
+    <a href="contact.html" class="btn-split">
+      <span class="btn-split-label">Get in touch</span>
+      <span class="btn-split-icon"><svg width="16" height="16" viewBox="0 0 24 24" fill="none"><path d="M7 17L17 7M17 7H9M17 7V15" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"/></svg></span>
+    </a>
   </div>
 </section>
 
@@ -162,6 +166,7 @@
         </div>
       </div>
     </div>
+    <div class="footer-wordmark" aria-hidden="true">dawnexit</div>
     <div class="footer-bottom">
       <span>&copy; <span id="year"></span> Dawn Exit — a trading name of Noremo UK Ltd. All rights reserved.</span>
       <span>ICO registration Z200837X · <a href="#">Privacy Policy</a></span>
