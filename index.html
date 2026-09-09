@@ -1,74 +1,169 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-  <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>STRUCTA — Build With Precision</title>
-  <meta name="description" content="Hero landing page template for a construction / building company." />
+<meta charset="UTF-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+<title>NOREMO — Tech Due Diligence, Strategy &amp; Exit Preparation for Private Equity</title>
+<meta name="description" content="Noremo is a boutique tech consultancy helping Private Equity firms and their portfolio companies de-risk acquisitions and accelerate value creation through Tech Due Diligence, Tech Strategy, and Exit Preparation." />
 
-  <link rel="preconnect" href="https://fonts.googleapis.com" />
-  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
-  <link href="https://fonts.googleapis.com/css2?family=Archivo+Black&family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet" />
-
-  <link rel="stylesheet" href="assets/css/style.css" />
+<link rel="preconnect" href="https://fonts.googleapis.com" />
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+<link href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@500;600;700&family=Inter:wght@400;500;600;700&family=JetBrains+Mono:wght@400;500&display=swap" rel="stylesheet" />
+<link rel="stylesheet" href="assets/css/style.css" />
 </head>
 <body>
 
-  <header class="hero">
-    <!-- Background layers -->
-    <div class="hero-bg" aria-hidden="true">
-      <img src="assets/img/hero-bg.svg" alt="" class="hero-bg-img" />
-      <div class="hero-overlay"></div>
+<!-- Intro sequence: plays once per session on Home only -->
+<div id="intro-overlay" aria-hidden="true">
+  <div class="intro-glow"></div>
+  <div class="intro-horizon"></div>
+  <div class="intro-mark">
+    <span class="brand-mark"></span>
+    <span>NOREMO</span>
+  </div>
+</div>
+
+<nav class="site-nav">
+  <div class="container">
+    <a href="index.html" class="brand"><span class="brand-mark"></span>NOREMO</a>
+    <ul class="nav-links" id="nav-links">
+      <li><a href="index.html" class="active">Home</a></li>
+      <li><a href="about.html">About</a></li>
+      <li><a href="services.html">Services</a></li>
+      <li><a href="contact.html">Contact</a></li>
+    </ul>
+    <div class="nav-actions" style="display:flex;align-items:center;gap:16px;">
+      <a href="contact.html" class="nav-cta">Get in touch</a>
+      <button class="nav-toggle" id="nav-toggle" aria-label="Toggle menu" aria-expanded="false">
+        <span></span><span></span><span></span>
+      </button>
     </div>
+  </div>
+</nav>
 
-    <!-- Nav -->
-    <nav class="navbar">
-      <a href="#" class="logo">
-        <span class="logo-mark">&#9670;</span>
-        STRUCTA
-      </a>
-
-      <ul class="nav-links" id="nav-links">
-        <li><a href="#home" class="active">Home</a></li>
-        <li><a href="#projects">Projects</a></li>
-        <li><a href="#services">Services</a></li>
-        <li><a href="#about">About</a></li>
-      </ul>
-
-      <div class="nav-actions">
-        <a href="#contact" class="btn btn-outline">Start a project</a>
-        <button class="nav-toggle" id="nav-toggle" aria-label="Toggle menu" aria-expanded="false">
-          <span></span><span></span><span></span>
-        </button>
+<header class="hero">
+  <div class="hero-bg" aria-hidden="true"></div>
+  <div class="container hero-inner">
+    <p class="eyebrow reveal">Tech Due Diligence · Tech Strategy · Exit Preparation</p>
+    <h1 class="hero-title reveal reveal-delay-1">Driving business efficiencies with <em>software + AI</em></h1>
+    <p class="hero-sub reveal reveal-delay-2">We help Private Equity firms and their portfolio companies de-risk acquisitions and accelerate value creation — through Tech Due Diligence, Tech Strategy, and Exit Preparation.</p>
+    <div class="hero-actions reveal reveal-delay-3">
+      <a href="contact.html" class="btn btn-primary">Get in touch <span class="btn-arrow">&#8599;</span></a>
+      <a href="services.html" class="link-arrow">Explore our services <span>&#8594;</span></a>
+    </div>
+    <div class="hero-meta reveal reveal-delay-3">
+      <div class="hero-meta-item">
+        <span class="stat">25+</span>
+        <span class="stat-label">Years, each partner</span>
       </div>
-    </nav>
-
-    <!-- Hero content -->
-    <div class="hero-content">
-      <h1 class="hero-title">BUILD</h1>
-    </div>
-
-    <!-- Bottom row: CTA card + since badge -->
-    <div class="hero-bottom">
-      <div class="cta-card">
-        <p>Hire us for your<br />next project.</p>
-        <a href="#contact" class="btn btn-primary">
-          Book now
-          <span class="btn-icon">&#8599;</span>
-        </a>
+      <div class="hero-meta-item">
+        <span class="stat">3</span>
+        <span class="stat-label">Core disciplines</span>
       </div>
-
-      <div class="since-badge">
-        <span class="since-mark">///</span>
-        <span>OPERATING SINCE<br /><strong>2010</strong></span>
+      <div class="hero-meta-item">
+        <span class="stat">7</span>
+        <span class="stat-label">Framework categories</span>
       </div>
     </div>
+  </div>
+</header>
 
-    <div class="scroll-cue" aria-hidden="true">
-      <span></span>
+<section class="section">
+  <div class="container">
+    <div class="section-head reveal">
+      <p class="eyebrow">01 — Who we are</p>
+      <h2>Great values. Great team. Real-world experience, applied practically.</h2>
+      <p>Matt, Rob and Ian bring 25+ years each in enterprise technology, consulting and Private Equity — including senior roles at IBM, Accenture, Telenor, and hands-on experience taking companies through scale-up and exit.</p>
     </div>
-  </header>
+    <a href="about.html" class="link-arrow reveal">Read more about the team <span>&#8594;</span></a>
+  </div>
+</section>
 
-  <script src="assets/js/main.js"></script>
+<section class="section section-alt">
+  <div class="container">
+    <div class="section-head reveal">
+      <p class="eyebrow">02 — What we do</p>
+      <h2>Three disciplines, one Scale-up to Exit journey.</h2>
+    </div>
+    <div class="grid grid-3 reveal">
+      <div class="grid-cell">
+        <span class="feature-num">01</span>
+        <div class="feature-icon">TD</div>
+        <h3>Tech Due Diligence</h3>
+        <p>De-risking acquisitions for PE and corporate buyers.</p>
+      </div>
+      <div class="grid-cell">
+        <span class="feature-num">02</span>
+        <div class="feature-icon">TS</div>
+        <h3>Tech Strategy</h3>
+        <p>Helping business leaders plan and fund their next years of growth.</p>
+      </div>
+      <div class="grid-cell">
+        <span class="feature-num">03</span>
+        <div class="feature-icon">EP</div>
+        <h3>Exit Preparation</h3>
+        <p>Getting companies ready for sale, faster and with less friction.</p>
+      </div>
+    </div>
+    <div style="margin-top:32px;">
+      <a href="services.html" class="link-arrow reveal">See the full framework <span>&#8594;</span></a>
+    </div>
+  </div>
+</section>
+
+<section class="section">
+  <div class="container">
+    <div class="section-head reveal">
+      <p class="eyebrow">03 — Who we work with</p>
+      <h2 style="font-size:clamp(24px,3vw,32px);">Mid-market Private Equity investors and their Growth Company portfolio businesses.</h2>
+      <p>Across Aviation, Energy, Insurance, Telecoms, Transportation and their supply, sales and service networks.</p>
+    </div>
+    <a href="services.html" class="link-arrow reveal">More on who we work with <span>&#8594;</span></a>
+  </div>
+</section>
+
+<section class="cta-band reveal">
+  <div class="container">
+    <h2>Have a question, a collaboration idea, or want to say hello? We'd love to hear from you.</h2>
+    <a href="contact.html" class="btn btn-primary">Get in touch <span class="btn-arrow">&#8599;</span></a>
+  </div>
+</section>
+
+<footer class="site-footer">
+  <div class="container">
+    <div class="footer-top">
+      <div class="footer-brand">
+        <a href="index.html" class="brand"><span class="brand-mark"></span>NOREMO</a>
+        <p>Boutique tech consultancy helping Private Equity and portfolio companies de-risk, strategise and exit with confidence.</p>
+      </div>
+      <div class="footer-cols">
+        <div class="footer-col">
+          <h4>Navigate</h4>
+          <ul>
+            <li><a href="index.html">Home</a></li>
+            <li><a href="about.html">About</a></li>
+            <li><a href="services.html">Services</a></li>
+            <li><a href="contact.html">Contact</a></li>
+          </ul>
+        </div>
+        <div class="footer-col">
+          <h4>Contact</h4>
+          <ul>
+            <li><a href="mailto:info@noremo.uk">info@noremo.uk</a></li>
+            <li><a href="https://www.linkedin.com/company/noremo/" target="_blank" rel="noopener">LinkedIn</a></li>
+            <li>124 City Road, London, EC1V 2NX</li>
+          </ul>
+        </div>
+      </div>
+    </div>
+    <div class="footer-bottom">
+      <span>&copy; <span id="year"></span> Noremo UK Ltd. All rights reserved.</span>
+      <span>ICO registration Z200837X · <a href="#">Privacy Policy</a></span>
+    </div>
+  </div>
+</footer>
+
+<script>document.getElementById("year").textContent = new Date().getFullYear();</script>
+<script src="assets/js/main.js"></script>
 </body>
 </html>

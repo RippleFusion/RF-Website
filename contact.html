@@ -1,0 +1,156 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+<title>Contact — NOREMO</title>
+<meta name="description" content="Get in touch with Noremo — book a meeting, email us, or connect on LinkedIn." />
+
+<link rel="preconnect" href="https://fonts.googleapis.com" />
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+<link href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@500;600;700&family=Inter:wght@400;500;600;700&family=JetBrains+Mono:wght@400;500&display=swap" rel="stylesheet" />
+<link rel="stylesheet" href="assets/css/style.css" />
+</head>
+<body>
+
+<nav class="site-nav">
+  <div class="container">
+    <a href="index.html" class="brand"><span class="brand-mark"></span>NOREMO</a>
+    <ul class="nav-links" id="nav-links">
+      <li><a href="index.html">Home</a></li>
+      <li><a href="about.html">About</a></li>
+      <li><a href="services.html">Services</a></li>
+      <li><a href="contact.html" class="active">Contact</a></li>
+    </ul>
+    <div class="nav-actions" style="display:flex;align-items:center;gap:16px;">
+      <a href="contact.html" class="nav-cta">Get in touch</a>
+      <button class="nav-toggle" id="nav-toggle" aria-label="Toggle menu" aria-expanded="false">
+        <span></span><span></span><span></span>
+      </button>
+    </div>
+  </div>
+</nav>
+
+<header class="page-hero" style="min-height:48vh;">
+  <div class="hero-bg" aria-hidden="true"></div>
+  <div class="container">
+    <p class="eyebrow reveal">Contact</p>
+    <h1 class="reveal reveal-delay-1">Have a question, a collaboration idea, or simply want to say hello?</h1>
+    <p class="reveal reveal-delay-2">We'd love to hear from you.</p>
+  </div>
+</header>
+
+<section class="section" style="padding-top:0;">
+  <div class="container">
+    <div class="contact-layout">
+
+      <form class="reveal" action="#" method="post">
+        <div class="form-row">
+          <div class="form-field">
+            <label for="name">Name</label>
+            <input type="text" id="name" name="name" required />
+          </div>
+          <div class="form-field">
+            <label for="email">Email</label>
+            <input type="email" id="email" name="email" required />
+          </div>
+        </div>
+        <div class="form-row">
+          <div class="form-field">
+            <label for="phone">Phone</label>
+            <input type="tel" id="phone" name="phone" />
+          </div>
+          <div class="form-field">
+            <label for="subject">Subject</label>
+            <select id="subject" name="subject">
+              <option>Info</option>
+              <option>Partnership</option>
+              <option>Media Inquiry</option>
+              <option>Speaking Request</option>
+              <option>Other</option>
+            </select>
+          </div>
+        </div>
+        <div class="form-field">
+          <label for="message">Message</label>
+          <textarea id="message" name="message" required></textarea>
+        </div>
+        <div class="form-check">
+          <input type="checkbox" id="terms" name="terms" required />
+          <label for="terms" style="margin:0;font-family:var(--font-body);text-transform:none;letter-spacing:normal;">I agree to Noremo's <a href="#" class="link-arrow" style="display:inline;">Privacy Policy</a> and consent to being contacted.</label>
+        </div>
+        <button type="submit" class="btn btn-primary">Send message <span class="btn-arrow">&#8599;</span></button>
+        <p class="form-note">We typically respond within one business day.</p>
+      </form>
+
+      <div class="reveal">
+        <p class="eyebrow" style="margin-bottom:20px;">Direct routes</p>
+        <div class="contact-routes">
+          <a class="contact-route" href="https://meetings-eu1.hubspot.com/matthew32" target="_blank" rel="noopener">
+            <div><span class="contact-route-label">Book a meeting</span><span class="contact-route-value">15 minutes with Matt</span></div>
+            <span class="contact-route-arrow">&#8599;</span>
+          </a>
+          <a class="contact-route" href="mailto:info@noremo.uk">
+            <div><span class="contact-route-label">Email</span><span class="contact-route-value">info@noremo.uk</span></div>
+            <span class="contact-route-arrow">&#8599;</span>
+          </a>
+          <a class="contact-route" href="https://www.linkedin.com/company/noremo/" target="_blank" rel="noopener">
+            <div><span class="contact-route-label">LinkedIn</span><span class="contact-route-value">Noremo (Company)</span></div>
+            <span class="contact-route-arrow">&#8599;</span>
+          </a>
+          <a class="contact-route" href="https://www.linkedin.com/in/matthew-jones-mpj/" target="_blank" rel="noopener">
+            <div><span class="contact-route-label">LinkedIn</span><span class="contact-route-value">Matt Jones</span></div>
+            <span class="contact-route-arrow">&#8599;</span>
+          </a>
+          <a class="contact-route" href="https://www.linkedin.com/in/robtrinibachan/" target="_blank" rel="noopener">
+            <div><span class="contact-route-label">LinkedIn</span><span class="contact-route-value">Rob Bachan</span></div>
+            <span class="contact-route-arrow">&#8599;</span>
+          </a>
+          <div class="contact-route">
+            <div><span class="contact-route-label">Registered office</span><span class="contact-route-value">124 City Road, London, EC1V 2NX, United Kingdom</span></div>
+          </div>
+        </div>
+      </div>
+
+    </div>
+  </div>
+</section>
+
+<footer class="site-footer">
+  <div class="container">
+    <div class="footer-top">
+      <div class="footer-brand">
+        <a href="index.html" class="brand"><span class="brand-mark"></span>NOREMO</a>
+        <p>Boutique tech consultancy helping Private Equity and portfolio companies de-risk, strategise and exit with confidence.</p>
+      </div>
+      <div class="footer-cols">
+        <div class="footer-col">
+          <h4>Navigate</h4>
+          <ul>
+            <li><a href="index.html">Home</a></li>
+            <li><a href="about.html">About</a></li>
+            <li><a href="services.html">Services</a></li>
+            <li><a href="contact.html">Contact</a></li>
+          </ul>
+        </div>
+        <div class="footer-col">
+          <h4>Contact</h4>
+          <ul>
+            <li><a href="mailto:info@noremo.uk">info@noremo.uk</a></li>
+            <li><a href="https://www.linkedin.com/company/noremo/" target="_blank" rel="noopener">LinkedIn</a></li>
+            <li>124 City Road, London, EC1V 2NX</li>
+          </ul>
+        </div>
+      </div>
+    </div>
+    <div class="footer-bottom">
+      <span>&copy; <span id="year"></span> Noremo UK Ltd. All rights reserved.</span>
+      <span>ICO registration Z200837X · <a href="#">Privacy Policy</a></span>
+    </div>
+  </div>
+</footer>
+
+<script>document.getElementById("year").textContent = new Date().getFullYear();</script>
+<script src="assets/js/main.js"></script>
+</body>
+</html>
