@@ -1,11 +1,11 @@
 /* ==========================================================================
    NOREMO — design system
-   Dark, cinematic base theme, Noremo red single accent, top-right nav.
+   Dark, cinematic base theme, signal-blue single accent, top-right nav.
    ========================================================================== */
 
 :root {
-  --noremo-red: #BC002D;
-  --noremo-red-bright: #E4173F;
+  --accent: #378ADD;
+  --accent-bright: #5AA3E8;
   --off-black: #0B0B0C;
   --panel-black: #131315;
   --line: rgba(255, 255, 255, 0.1);
@@ -69,7 +69,7 @@ p { margin: 0; }
   font-size: 12.5px;
   letter-spacing: 0.14em;
   text-transform: uppercase;
-  color: var(--noremo-red-bright);
+  color: var(--accent-bright);
   display: inline-flex;
   align-items: center;
   gap: 10px;
@@ -78,7 +78,7 @@ p { margin: 0; }
   content: "";
   width: 22px;
   height: 1px;
-  background: var(--noremo-red-bright);
+  background: var(--accent-bright);
 }
 
 .stat {
@@ -128,7 +128,7 @@ p { margin: 0; }
 .brand-mark {
   width: 11px;
   height: 11px;
-  background: var(--noremo-red);
+  background: var(--accent);
   display: inline-block;
   flex-shrink: 0;
 }
@@ -161,7 +161,7 @@ p { margin: 0; }
   bottom: 0;
   width: 100%;
   height: 2px;
-  background: var(--noremo-red);
+  background: var(--accent);
 }
 
 .nav-cta {
@@ -176,8 +176,8 @@ p { margin: 0; }
   transition: border-color 0.25s var(--ease), background-color 0.25s var(--ease);
 }
 .nav-cta:hover {
-  border-color: var(--noremo-red);
-  background: rgba(188, 0, 45, 0.12);
+  border-color: var(--accent);
+  background: rgba(55, 138, 221, 0.12);
 }
 
 .nav-toggle {
@@ -211,16 +211,16 @@ p { margin: 0; }
 }
 
 .btn-primary {
-  background: var(--noremo-red);
+  background: var(--accent);
   color: var(--white);
 }
-.btn-primary:hover { background: var(--noremo-red-bright); }
+.btn-primary:hover { background: var(--accent-bright); }
 
 .btn-outline {
   border-color: var(--line);
   color: var(--white);
 }
-.btn-outline:hover { border-color: var(--noremo-red); background: rgba(188, 0, 45, 0.1); }
+.btn-outline:hover { border-color: var(--accent); background: rgba(55, 138, 221, 0.1); }
 
 .btn-arrow { transition: transform 0.25s var(--ease); }
 .btn:hover .btn-arrow { transform: translate(3px, -3px); }
@@ -229,14 +229,14 @@ p { margin: 0; }
   display: inline-flex;
   align-items: center;
   gap: 8px;
-  color: var(--noremo-red-bright);
+  color: var(--accent-bright);
   font-weight: 600;
   font-size: 15px;
   border-bottom: 1px solid transparent;
   padding-bottom: 2px;
   transition: border-color 0.25s var(--ease);
 }
-.link-arrow:hover { border-color: var(--noremo-red-bright); }
+.link-arrow:hover { border-color: var(--accent-bright); }
 .link-arrow span { transition: transform 0.25s var(--ease); }
 .link-arrow:hover span { transform: translateX(4px); }
 
@@ -292,7 +292,7 @@ section { position: relative; }
   position: absolute;
   inset: 0;
   background:
-    radial-gradient(ellipse 80% 60% at 50% 0%, rgba(188, 0, 45, 0.16), transparent 60%),
+    radial-gradient(ellipse 80% 60% at 50% 0%, rgba(55, 138, 221, 0.16), transparent 60%),
     linear-gradient(180deg, #0B0B0C 0%, #0B0B0C 60%, #131315 100%);
 }
 .hero-bg::after {
@@ -317,7 +317,7 @@ section { position: relative; }
 }
 .hero-title em {
   font-style: normal;
-  color: var(--noremo-red-bright);
+  color: var(--accent-bright);
 }
 
 .hero-sub {
@@ -346,7 +346,7 @@ section { position: relative; }
 .hero-meta-item .stat {
   display: block;
   font-size: 26px;
-  color: var(--noremo-red-bright);
+  color: var(--accent-bright);
 }
 .hero-meta-item .stat-label {
   display: block;
@@ -400,7 +400,7 @@ section { position: relative; }
 .feature-num {
   font-family: var(--font-mono);
   font-size: 13px;
-  color: var(--noremo-red-bright);
+  color: var(--accent-bright);
   letter-spacing: 0.08em;
 }
 
@@ -412,7 +412,7 @@ section { position: relative; }
   align-items: center;
   justify-content: center;
   margin-bottom: 24px;
-  color: var(--noremo-red-bright);
+  color: var(--accent-bright);
 }
 
 .grid-cell h3 {
@@ -545,7 +545,7 @@ section { position: relative; }
 .team-photo {
   aspect-ratio: 4/5;
   background:
-    linear-gradient(160deg, rgba(188,0,45,0.35), transparent 60%),
+    linear-gradient(160deg, rgba(55,138,221,0.35), transparent 60%),
     var(--panel-black);
   display: flex;
   align-items: center;
@@ -572,14 +572,14 @@ section { position: relative; }
   font-size: 12.5px;
   letter-spacing: 0.08em;
   text-transform: uppercase;
-  color: var(--noremo-red-bright);
+  color: var(--accent-bright);
 }
 .team-bio { margin-top: 18px; color: var(--grey); font-size: 14.5px; line-height: 1.7; }
 .team-timeline { margin-top: 22px; display: flex; flex-direction: column; gap: 12px; }
 .team-timeline-item { display: flex; gap: 14px; font-size: 13.5px; }
 .team-timeline-item .yr {
   font-family: var(--font-mono);
-  color: var(--noremo-red-bright);
+  color: var(--accent-bright);
   flex-shrink: 0;
   width: 4.5ch;
 }
@@ -598,7 +598,7 @@ section { position: relative; }
   font-size: 12.5px;
   color: var(--grey-dim);
   font-style: italic;
-  border-left: 2px solid var(--noremo-red);
+  border-left: 2px solid var(--accent);
   padding-left: 10px;
 }
 
@@ -620,7 +620,7 @@ section { position: relative; }
 }
 .values-list .vnum {
   font-family: var(--font-mono);
-  color: var(--noremo-red-bright);
+  color: var(--accent-bright);
   flex-shrink: 0;
 }
 
@@ -652,7 +652,7 @@ section { position: relative; }
   border-bottom: 2px solid transparent;
   transition: color 0.2s var(--ease), border-color 0.2s var(--ease);
 }
-.anchor-nav a:hover, .anchor-nav a.is-active { color: var(--white); border-color: var(--noremo-red); }
+.anchor-nav a:hover, .anchor-nav a.is-active { color: var(--white); border-color: var(--accent); }
 
 .service-block {
   scroll-margin-top: calc(var(--nav-h) + 60px);
@@ -663,7 +663,7 @@ section { position: relative; }
 .service-num {
   font-family: var(--font-mono);
   font-size: 15px;
-  color: var(--noremo-red-bright);
+  color: var(--accent-bright);
 }
 .service-block h2 {
   font-size: clamp(28px, 3.6vw, 40px);
@@ -699,7 +699,7 @@ section { position: relative; }
   padding: 22px 0;
   border-bottom: 1px solid var(--line);
 }
-.framework-item .stat { font-size: 14px; color: var(--noremo-red-bright); width: 3ch; flex-shrink: 0; }
+.framework-item .stat { font-size: 14px; color: var(--accent-bright); width: 3ch; flex-shrink: 0; }
 .framework-item span:last-child { font-size: 17px; }
 
 .figure-row {
@@ -711,7 +711,7 @@ section { position: relative; }
   margin-top: 40px;
 }
 .figure-cell { background: var(--off-black); padding: 32px 28px; }
-.figure-cell .stat { font-size: 30px; color: var(--noremo-red-bright); display: block; }
+.figure-cell .stat { font-size: 30px; color: var(--accent-bright); display: block; }
 .figure-cell p { margin-top: 10px; color: var(--grey); font-size: 14px; }
 
 .outcomes-list {
@@ -731,7 +731,7 @@ section { position: relative; }
 }
 .outcomes-list li::before {
   content: "→";
-  color: var(--noremo-red-bright);
+  color: var(--accent-bright);
   flex-shrink: 0;
 }
 
@@ -796,7 +796,7 @@ section { position: relative; }
 .form-field select:focus,
 .form-field textarea:focus {
   outline: none;
-  border-color: var(--noremo-red);
+  border-color: var(--accent);
 }
 .form-field textarea { resize: vertical; min-height: 130px; }
 .form-row { display: grid; grid-template-columns: 1fr 1fr; gap: 20px; }
@@ -831,7 +831,7 @@ section { position: relative; }
   gap: 16px;
   transition: background-color 0.2s var(--ease);
 }
-a.contact-route:hover { background: rgba(188,0,45,0.08); }
+a.contact-route:hover { background: rgba(55,138,221,0.08); }
 .contact-route-label {
   font-family: var(--font-mono);
   font-size: 11.5px;
@@ -842,7 +842,7 @@ a.contact-route:hover { background: rgba(188,0,45,0.08); }
   margin-bottom: 6px;
 }
 .contact-route-value { font-size: 16px; }
-.contact-route-arrow { color: var(--noremo-red-bright); flex-shrink: 0; }
+.contact-route-arrow { color: var(--accent-bright); flex-shrink: 0; }
 
 /* --------------------------------- Intro ------------------------------------ */
 
@@ -870,7 +870,7 @@ a.contact-route:hover { background: rgba(188,0,45,0.08); }
   height: 60vmax;
   border-radius: 50%;
   transform: translate(-50%, 20%);
-  background: radial-gradient(circle at center, rgba(228,23,63,0.55), rgba(188,0,45,0.28) 40%, transparent 70%);
+  background: radial-gradient(circle at center, rgba(90,163,232,0.55), rgba(55,138,221,0.28) 40%, transparent 70%);
   filter: blur(6px);
   transition: transform 1.8s var(--ease), opacity 1.8s var(--ease);
 }
