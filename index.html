@@ -613,7 +613,8 @@
   .c h2 { font-size: clamp(2rem, min(4vw, 6.8vh), 4.2rem); max-width: 18ch; }
   .track { display: flex; flex-direction: column; gap: 14px; }
   .tag {
-    align-self: flex-start; margin: 0; max-width: none; padding: 5px 14px; border-radius: 999px;
+    align-self: flex-start; margin: 0; max-width: none; border-radius: 999px;
+    padding: calc(5px + 0.36em) 14px calc(5px - 0.36em);
     background: rgba(255, 255, 255, 0.7); color: var(--ink);
     font-family: var(--logo); font-weight: 600; font-size: clamp(0.85rem, min(1vw, 1.8vh), 1rem);
     display: inline-flex; align-items: center; justify-content: center; line-height: 1.1;
@@ -652,7 +653,7 @@
   .tl { gap: clamp(10px, 2.2vh, 22px); }
   .c h2 { font-size: clamp(1.8rem, min(3.4vw, 5.6vh), 3.5rem); max-width: none; }
   .track { display: grid; grid-template-columns: clamp(92px, 11vw, 168px) 1fr; column-gap: 16px; align-items: start; }
-  .tag { border-radius: 14px; padding: 6px 12px; text-align: center; line-height: 1.15; font-size: clamp(0.8rem, min(0.95vw, 1.7vh), 0.98rem); }
+  .tag { border-radius: 14px; padding: calc(6px + 0.36em) 12px calc(6px - 0.36em); text-align: center; line-height: 1.15; font-size: clamp(0.8rem, min(0.95vw, 1.7vh), 0.98rem); }
   .nodes b { font-size: clamp(0.92rem, min(1.28vw, 2.35vh), 1.3rem); }
   .nodes span { font-size: clamp(0.8rem, min(0.95vw, 1.7vh), 1rem); line-height: 1.32; }
   .dot { width: 20px; height: 20px; border-width: 4px; margin: -4px 0 6px -4px; box-shadow: 0 0 0 2px var(--c); }
