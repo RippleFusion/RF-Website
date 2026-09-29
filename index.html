@@ -200,6 +200,11 @@
   }
   .ripples i:nth-child(2) { animation-delay: 2.3s; }
   .ripples i:nth-child(3) { animation-delay: 4.6s; }
+
+  /* EXPERIMENT: subtle moving ripple accent on the hero card, echoing the Ripple Fusion name. Remove this block + the .hero-ripples div in markup to revert. */
+  .a .hero-ripples { z-index: 0; }
+  .a .hero-ripples i { right: 8%; top: 42%; width: 420px; height: 420px; margin: -210px -210px 0 0; }
+  @media (max-width: 700px) { .a .hero-ripples i { right: -15%; top: 55%; width: 300px; height: 300px; margin: -150px -150px 0 0; } }
   @keyframes ripple { 0% { opacity: 0.35; transform: scale(0.2); } 100% { opacity: 0; transform: scale(2.6); } }
 
   /* Frosted boxes, so they also sit well over a video */
@@ -749,6 +754,7 @@
   <section class="page a" style="--i:0" aria-label="Ian Lloyd">
     <div class="tab"><span><span class="o">I</span>AN <span class="o">L</span>LOYD</span></div>
     <div class="word" aria-hidden="true">IL</div>
+    <div class="ripples hero-ripples" aria-hidden="true"><i></i><i></i><i></i></div>
     <img class="portrait" alt="Ian Lloyd" width="719" height="1000" src="assets/img/ian-lloyd-portrait.webp">
     
     <div class="inner">
