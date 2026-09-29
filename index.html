@@ -681,9 +681,10 @@
   /* SECTORS page */
   .sectors { background: #b9d9c6; --ring: #b9d9c6; }
 
+  .track-head { display: flex; flex-direction: column; gap: 8px; }
   .track-note {
-    margin: -2px 0 0; max-width: 26ch; font-family: var(--logo); color: var(--ink); opacity: 0.75;
-    font-size: clamp(0.8rem, min(0.92vw, 1.6vh), 0.92rem); line-height: 1.4;
+    margin: 0; max-width: none; font-family: var(--logo); color: var(--ink); opacity: 0.75;
+    font-size: clamp(0.78rem, min(0.85vw, 1.5vh), 0.88rem); line-height: 1.4;
   }
 
   /* SECTORS: same timeline, but each step is a frosted tile strung along the line */
@@ -849,8 +850,10 @@
           </ol>
         </div>
         <div class="track rv" style="--d:4">
-          <p class="tag">Private equity</p>
-          <p class="track-note">Across EQT, Partners Group, Providence, TPG Capital, CPPIB and Leonard Green &amp; Partners.</p>
+          <div class="track-head">
+            <p class="tag">Private equity</p>
+            <p class="track-note">Across EQT, Partners Group, Providence, TPG Capital, CPPIB and Leonard Green &amp; Partners.</p>
+          </div>
           <ol class="nodes" style="--n:6">
             <li class="rv" style="--c:#bd5533;--d:5"><i class="dot"></i><b>Due diligence</b><span>Testing the plan and systems before the deal.</span></li>
             <li class="rv" style="--c:#0f3b40;--d:6"><i class="dot"></i><b>Carve-out</b><span>Separating finance, systems, data and people.</span></li>
