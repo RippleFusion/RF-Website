@@ -18,7 +18,7 @@ The booking link (`https://calendly.com/ian-ianlloyd/30min`) is wired on both th
 ## Deploying to ianlloyd.com
 
 1. **GitHub Pages**: in the repo's Settings → Pages, set Source to "GitHub Actions" (the included workflow handles the build/deploy — there's no build step, it just publishes the repo as-is). Done.
-2. `main` is the default branch — the workflow deploys automatically on every push to it. Done.
+2. `main` is the default branch, and the `github-pages` environment allows deploys from it — the workflow deploys automatically on every push. Done.
 3. **DNS** — at your domain registrar/DNS provider, add these records for ianlloyd.com. Do **not** touch your existing MX records — email keeps working exactly as it does today.
    - Apex domain (`ianlloyd.com`): four `A` records pointing at GitHub Pages' IPs:
      ```
