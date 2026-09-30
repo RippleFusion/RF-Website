@@ -203,18 +203,12 @@
 
   /* EXPERIMENT: subtle moving ripple accent on the hero card, echoing the Ripple Fusion name. Remove this block + the .hero-ripples div in markup to revert. */
   .a .hero-ripples { z-index: 0; }
-  .a .hero-ripples i { left: auto; border-color: rgba(189, 85, 51, 0.55); }
-  .a .hero-ripples i:nth-child(1) { left: 6%; top: 18%; width: 220px; height: 220px; margin: -110px 0 0 -110px; animation-delay: 0s; }
-  .a .hero-ripples i:nth-child(2) { left: 32%; top: 82%; width: 260px; height: 260px; margin: -130px 0 0 -130px; animation-delay: 2.3s; }
-  .a .hero-ripples i:nth-child(3) { right: 6%; top: 40%; width: 420px; height: 420px; margin: -210px -210px 0 0; animation-delay: 4.6s; }
-  .a .hero-ripples i:nth-child(4) { left: 55%; top: 8%; width: 180px; height: 180px; margin: -90px 0 0 -90px; animation-delay: 1.2s; }
-  .a .hero-ripples i:nth-child(5) { right: 28%; top: 85%; width: 240px; height: 240px; margin: -120px -120px 0 0; animation-delay: 3.6s; }
+  .a .hero-ripples i {
+    left: auto; border-color: rgba(189, 85, 51, 0.5);
+    right: 18%; top: 46%; width: 900px; height: 900px; margin: -450px -450px 0 0;
+  }
   @media (max-width: 700px) {
-    .a .hero-ripples i:nth-child(1) { left: -8%; top: 12%; width: 160px; height: 160px; margin: -80px 0 0 -80px; }
-    .a .hero-ripples i:nth-child(2) { left: 22%; top: 78%; width: 180px; height: 180px; margin: -90px 0 0 -90px; }
-    .a .hero-ripples i:nth-child(3) { right: -15%; top: 55%; width: 300px; height: 300px; margin: -150px -150px 0 0; }
-    .a .hero-ripples i:nth-child(4) { left: 45%; top: 4%; width: 130px; height: 130px; margin: -65px 0 0 -65px; }
-    .a .hero-ripples i:nth-child(5) { right: 5%; top: 88%; width: 150px; height: 150px; margin: -75px -75px 0 0; }
+    .a .hero-ripples i { right: -10%; top: 55%; width: 480px; height: 480px; margin: -240px -240px 0 0; }
   }
   @keyframes ripple { 0% { opacity: 0.35; transform: scale(0.2); } 100% { opacity: 0; transform: scale(2.6); } }
 
@@ -765,7 +759,7 @@
   <section class="page a" style="--i:0" aria-label="Ian Lloyd">
     <div class="tab"><span><span class="o">I</span>AN <span class="o">L</span>LOYD</span></div>
     <div class="word" aria-hidden="true">IL</div>
-    <div class="ripples hero-ripples" aria-hidden="true"><i></i><i></i><i></i><i></i><i></i></div>
+    <div class="ripples hero-ripples" aria-hidden="true"><i></i><i></i><i></i></div>
     <img class="portrait" alt="Ian Lloyd" width="719" height="1000" src="assets/img/ian-lloyd-portrait.webp">
     
     <div class="inner">
