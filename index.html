@@ -8,7 +8,7 @@
 <link rel="canonical" href="https://ianlloyd.com/">
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-<link href="https://fonts.googleapis.com/css2?family=Bricolage+Grotesque:opsz,wght@12..96,500;12..96,800&family=Instrument+Sans:wght@400;500&family=Josefin+Sans:wght@400;600&display=swap" rel="stylesheet">
+<link href="https://fonts.googleapis.com/css2?family=Bricolage+Grotesque:opsz,wght@12..96,500;12..96,800&family=Instrument+Sans:wght@400;500&family=Josefin+Sans:wght@400;600&family=Iceland&display=swap" rel="stylesheet">
 <script>document.documentElement.classList.add("js");</script>
 <style>
   :root {
@@ -389,6 +389,10 @@
     position: absolute; left: clamp(24px, 6vw, 88px); bottom: max(18px, env(safe-area-inset-bottom, 0px) + 12px);
     margin: 0; font-family: var(--logo); color: var(--card-black); opacity: 0.6;
     font-size: clamp(0.85rem, 1.3vw, 1rem); z-index: 1;
+  }
+  .a .trading-as .brand {
+    font-family: "Iceland", var(--logo); text-transform: uppercase; letter-spacing: 0.04em;
+    font-size: 1.15em; opacity: 0.9;
   }
   @media (max-width: 700px) { .portrait { height: 40%; max-width: 62vw; } }
 
@@ -779,7 +783,7 @@
           <button class="circle speak" type="button" data-go="contact">Speak with Me</button>
         </div>
       </div>
-      <p class="trading-as">Ian Lloyd, trading as Ripple Fusion (PSC).</p>
+      <p class="trading-as">Ian Lloyd, working through my PSC, <span class="brand">Ripple Fusion</span>.</p>
     </div>
   </section>
 
