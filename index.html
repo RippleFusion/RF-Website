@@ -263,25 +263,37 @@
   /* Sea-like ripples radiating from behind the portrait, echoing the Ripple Fusion name */
   .a .hero-ripples { z-index: 0; }
   .a .hero-ripples i {
-    left: auto; border-color: rgba(31, 107, 122, 0.4);
+    left: auto; border-width: 1.5px; border-color: rgba(31, 107, 122, 0.45);
     right: 32%; top: 52%;
-    width: 760px; height: 760px; margin: -380px -380px 0 0;
-    animation-duration: 13s; animation-timing-function: ease-out;
+    width: 620px; height: 620px; margin: -310px -310px 0 0;
+    animation-duration: 9s; animation-timing-function: ease-out;
   }
   .a .hero-ripples i:nth-child(2) {
-    width: 940px; height: 940px; margin: -470px -470px 0 0;
-    border-color: rgba(31, 107, 122, 0.3);
-    animation-duration: 15s; animation-delay: 3.5s;
+    width: 800px; height: 800px; margin: -400px -400px 0 0;
+    border-color: rgba(31, 107, 122, 0.38);
+    animation-duration: 9s; animation-delay: 1.8s;
   }
   .a .hero-ripples i:nth-child(3) {
-    width: 1140px; height: 1140px; margin: -570px -570px 0 0;
+    width: 980px; height: 980px; margin: -490px -490px 0 0;
+    border-color: rgba(31, 107, 122, 0.3);
+    animation-duration: 9s; animation-delay: 3.6s;
+  }
+  .a .hero-ripples i:nth-child(4) {
+    width: 1160px; height: 1160px; margin: -580px -580px 0 0;
     border-color: rgba(31, 107, 122, 0.22);
-    animation-duration: 17s; animation-delay: 7s;
+    animation-duration: 9s; animation-delay: 5.4s;
+  }
+  .a .hero-ripples i:nth-child(5) {
+    width: 1340px; height: 1340px; margin: -670px -670px 0 0;
+    border-color: rgba(31, 107, 122, 0.15);
+    animation-duration: 9s; animation-delay: 7.2s;
   }
   @media (max-width: 700px) {
-    .a .hero-ripples i { right: 10%; top: 58%; width: 420px; height: 420px; margin: -210px -210px 0 0; }
-    .a .hero-ripples i:nth-child(2) { width: 520px; height: 520px; margin: -260px -260px 0 0; }
-    .a .hero-ripples i:nth-child(3) { width: 620px; height: 620px; margin: -310px -310px 0 0; }
+    .a .hero-ripples i { right: 10%; top: 58%; width: 340px; height: 340px; margin: -170px -170px 0 0; }
+    .a .hero-ripples i:nth-child(2) { width: 440px; height: 440px; margin: -220px -220px 0 0; }
+    .a .hero-ripples i:nth-child(3) { width: 540px; height: 540px; margin: -270px -270px 0 0; }
+    .a .hero-ripples i:nth-child(4) { width: 640px; height: 640px; margin: -320px -320px 0 0; }
+    .a .hero-ripples i:nth-child(5) { width: 740px; height: 740px; margin: -370px -370px 0 0; }
   }
   @keyframes ripple { 0% { opacity: 0.35; transform: scale(0.2); } 100% { opacity: 0; transform: scale(2.6); } }
 
@@ -856,7 +868,7 @@
   <section class="page a" style="--i:0" aria-label="Ian Lloyd">
     <div class="tab"><span><span class="o">I</span>AN <span class="o">L</span>LOYD</span></div>
     <div class="word" aria-hidden="true">IL</div>
-    <div class="ripples hero-ripples" aria-hidden="true"><i></i><i></i><i></i></div>
+    <div class="ripples hero-ripples" aria-hidden="true"><i></i><i></i><i></i><i></i><i></i></div>
     <img class="portrait" alt="Ian Lloyd" width="719" height="1000" src="assets/img/ian-lloyd-portrait.webp">
     
     <div class="inner">
