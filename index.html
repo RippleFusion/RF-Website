@@ -260,17 +260,28 @@
   .ripples i:nth-child(2) { animation-delay: 2.3s; }
   .ripples i:nth-child(3) { animation-delay: 4.6s; }
 
-  /* EXPERIMENT: subtle moving ripple accent on the hero card, echoing the Ripple Fusion name. Remove this block + the .hero-ripples div in markup to revert. */
+  /* Sea-like ripples radiating from behind the portrait, echoing the Ripple Fusion name */
   .a .hero-ripples { z-index: 0; }
   .a .hero-ripples i {
-    left: auto; border-color: rgba(189, 85, 51, 0.5);
-    right: 18%; top: 46%; width: 900px; height: 900px; margin: -450px -450px 0 0;
-    animation-duration: 12s;
+    left: auto; border-color: rgba(31, 107, 122, 0.4);
+    right: 32%; top: 52%;
+    width: 760px; height: 760px; margin: -380px -380px 0 0;
+    animation-duration: 13s; animation-timing-function: ease-out;
   }
-  .a .hero-ripples i:nth-child(2) { animation-delay: 4s; }
-  .a .hero-ripples i:nth-child(3) { animation-delay: 8s; }
+  .a .hero-ripples i:nth-child(2) {
+    width: 940px; height: 940px; margin: -470px -470px 0 0;
+    border-color: rgba(31, 107, 122, 0.3);
+    animation-duration: 15s; animation-delay: 3.5s;
+  }
+  .a .hero-ripples i:nth-child(3) {
+    width: 1140px; height: 1140px; margin: -570px -570px 0 0;
+    border-color: rgba(31, 107, 122, 0.22);
+    animation-duration: 17s; animation-delay: 7s;
+  }
   @media (max-width: 700px) {
-    .a .hero-ripples i { right: -10%; top: 55%; width: 480px; height: 480px; margin: -240px -240px 0 0; }
+    .a .hero-ripples i { right: 10%; top: 58%; width: 420px; height: 420px; margin: -210px -210px 0 0; }
+    .a .hero-ripples i:nth-child(2) { width: 520px; height: 520px; margin: -260px -260px 0 0; }
+    .a .hero-ripples i:nth-child(3) { width: 620px; height: 620px; margin: -310px -310px 0 0; }
   }
   @keyframes ripple { 0% { opacity: 0.35; transform: scale(0.2); } 100% { opacity: 0; transform: scale(2.6); } }
 
