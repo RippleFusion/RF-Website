@@ -279,16 +279,7 @@
   .d .left { align-self: end; }
   @media (min-width: 900px) { .d .contact-wrap { grid-template-columns: 1.25fr 0.75fr; } }
   @media (max-width: 899px) { .d .inner { justify-content: flex-end; } .d .left { display: none; } }
-  .d .ripples i {
-    border-color: rgba(255, 255, 255, 0.9);
-    width: 900px; height: 900px; margin: -450px -450px 0 0;
-    animation-duration: 12s;
-  }
-  .d .ripples i:nth-child(2) { animation-delay: 4s; }
-  .d .ripples i:nth-child(3) { animation-delay: 8s; }
-  @media (max-width: 700px) {
-    .d .ripples i { width: 480px; height: 480px; margin: -240px -240px 0 0; }
-  }
+  .d .ripples i { border-color: rgba(255, 255, 255, 0.9); }
 
   /* boxes: value only, centred; offices centred under them */
   .box { justify-content: center; text-align: center; padding: 22px 20px; }
