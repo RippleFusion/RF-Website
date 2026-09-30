@@ -488,7 +488,9 @@
   .a .trading-as .brand {
     font-family: "Punoer", var(--logo); text-transform: uppercase; letter-spacing: 0.04em;
     font-size: 1.15em; opacity: 0.9;
+    color: inherit; text-decoration: none; transition: opacity .2s;
   }
+  .a .trading-as .brand:hover, .a .trading-as .brand:focus-visible { opacity: 1; }
   @media (max-width: 700px) { .portrait { height: 40%; max-width: 62vw; } .a .trading-as { left: clamp(24px, 6vw, 88px); } }
   @media (min-width: 1700px) { .a .trading-as { left: calc(clamp(24px, 6vw, 88px) + 16.5vw); } }
 
@@ -880,7 +882,7 @@
           <button class="circle speak" type="button" data-go="contact"><span class="label">Speak with Me</span></button>
         </div>
       </div>
-      <p class="trading-as">Working through my PSC, <span class="brand">Ripple Fusion</span>.</p>
+      <p class="trading-as">Working through my PSC, <a class="brand" href="https://ripplefusion.com" target="_blank" rel="noopener">Ripple Fusion</a>.</p>
     </div>
   </section>
 
