@@ -425,7 +425,7 @@
     filter: drop-shadow(0 18px 28px rgba(0, 0, 0, 0.18));
   }
   .a .inner { position: relative; z-index: 1; }
-  .a .hero-foot, .a h1 { max-width: 58%; margin-left: 4vw; }
+  .a .hero-foot, .a h1 { max-width: 58%; margin-left: 10.25vw; }
   @media (max-width: 700px) {
     .portrait { height: 40%; right: -6vw; }
     .a .hero-foot, .a h1 { max-width: none; margin-left: 0; }
@@ -457,7 +457,7 @@
   .a .role { margin-top: clamp(16px, 3vh, 32px); }
   .a .circles { flex: 1; align-items: center; align-content: center; padding-bottom: clamp(32px, 6vh, 56px); }
   .a .trading-as {
-    position: absolute; left: calc(clamp(24px, 6vw, 88px) + 4vw); bottom: max(18px, env(safe-area-inset-bottom, 0px) + 12px);
+    position: absolute; left: calc(clamp(24px, 6vw, 88px) + 10.25vw); bottom: max(18px, env(safe-area-inset-bottom, 0px) + 12px);
     margin: 0; font-family: var(--logo); color: var(--card-black); opacity: 0.6;
     font-size: clamp(0.85rem, 1.3vw, 1rem); z-index: 1;
   }
@@ -528,6 +528,7 @@
   .a h1 .ian, .a h1 .lloyd { font-size: clamp(4.5rem, min(19vw, 20vh), 16.5rem); }
 
   a.circle, button.circle { display: inline-flex; align-items: center; justify-content: center; text-align: center; text-decoration: none; }
+  .circle.speak .label { display: block; transform: translateY(9px); }
 
   /* ABOUT ME: calm two-column layout */
   .b { overflow-y: auto; }
@@ -851,7 +852,7 @@
         <p class="role">AI-fluent data and transformation leader. I help leadership teams turn strategy into delivered results.</p>
         <div class="circles">
           <a class="circle book" id="book" href="https://calendly.com/ian-ianlloyd/30min" target="_blank" rel="noopener" aria-label="Book a call (opens Calendly in a new tab)">Book a call</a>
-          <button class="circle speak" type="button" data-go="contact">Speak with Me</button>
+          <button class="circle speak" type="button" data-go="contact"><span class="label">Speak with Me</span></button>
         </div>
       </div>
       <p class="trading-as">Working through my PSC, <span class="brand">Ripple Fusion</span>.</p>
