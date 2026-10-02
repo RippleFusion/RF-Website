@@ -221,6 +221,8 @@
   }
   .circles { display: flex; flex-wrap: wrap; gap: clamp(12px, 2vw, 24px); }
   .circle {
+    -webkit-appearance: none; appearance: none;
+    margin: 0; box-sizing: border-box; -webkit-font-smoothing: antialiased;
     width: clamp(104px, min(14vw, 18vh), 164px);
     aspect-ratio: 1;
     border-radius: 50%;
