@@ -853,28 +853,28 @@
       top: auto;
       height: auto;
       min-height: 100svh;
-      min-height: 100lvh;
       overflow: visible;
       box-shadow: none;
     }
     .b, .c, .d { overflow-y: visible; }
     .inner { height: auto; }
 
-    /* The hero's portrait photo is positioned with percentage heights (e.g. 40%) against
-       .page.a itself, and the circles/trading-as line depend on .a .inner having its full
-       height too (circles use flex:1 to float centred in the space below the text, and
-       trading-as is pinned near the true bottom with position:absolute). With .page and
-       .inner given height:auto above, none of that has anything definite to resolve
-       against, so it all collapsed to the top instead of sitting as designed. Hero content
-       always fits one screen, so give both their definite full-screen height back, same
-       idea as Work With Me below. */
-    .page.a { height: 100svh; height: 100lvh; }
-    .a .inner { height: calc(100% - var(--tab)); }
+    /* The hero's portrait photo is positioned with a percentage height (40%) against
+       .page.a itself, which needs a definite height to resolve against - give it that back.
+       The buttons and trading-as line, though, used to depend on .a .inner's full height too
+       (flex:1 centring and position:absolute bottom-pinning), which ties their position to
+       the page's exact pixel height. iOS Safari's address bar collapsing/expanding while
+       scrolling changes that live, so anything pinned that way visibly jumped. Keep them in
+       normal flow instead, with fixed spacing that doesn't care what the page's exact height
+       is from one moment to the next - nothing left to recalculate, nothing to jump. */
+    .page.a { height: 100svh; }
+    .a .circles { margin-top: 160px; }
+    .a .trading-as { position: static; margin: 110px 0 0; }
 
     /* Work With Me fills exactly one screen of background video with the contact boxes
        pinned to its bottom, over her hand rather than her face - that needs a definite
        height to anchor against, so give this one section its full-screen height back. */
-    .page.d { height: 100svh; height: 100lvh; }
+    .page.d { height: 100svh; }
     .d .inner { height: calc(100% - var(--tab)); justify-content: flex-end; padding-bottom: 12vh; }
   }
 </style>
