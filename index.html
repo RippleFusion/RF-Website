@@ -836,6 +836,29 @@
     .card { -webkit-backdrop-filter: none; backdrop-filter: none; background: rgba(255, 255, 255, 0.86); }
     .card.feature { background: rgba(255, 255, 255, 0.86); }
   }
+
+  /* MOBILE SCROLLING: the sticky-stack (each page pinned in place, revealing a tab strip
+     from the page behind it, with overflow-y:auto on any section taller than the screen)
+     fights itself on touch. A touch scroll gets trapped inside whichever section has
+     internal overflow until it's dragged all the way to its own end before the outer
+     sticky scroll will advance to reveal the next page, and the last section can end up
+     impossible to fully scroll. Drop the stacking/sticky mechanism on mobile entirely and
+     let the page scroll normally instead, one section after another - simpler, and the
+     tab-click "jump to section" behaviour above still works unchanged since it falls back
+     to each page's natural document position once nothing is sticky any more.
+     Placed last so it wins over every earlier .page/.inner declaration. */
+  @media (max-width: 899px) {
+    .page {
+      position: relative;
+      top: auto;
+      height: auto;
+      min-height: 100svh;
+      overflow: visible;
+      box-shadow: none;
+    }
+    .b, .c, .d { overflow-y: visible; }
+    .inner { height: auto; }
+  }
 </style>
 </head>
 <body>
