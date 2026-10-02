@@ -876,6 +876,13 @@
        height to anchor against, so give this one section its full-screen height back. */
     .page.d { height: 100svh; }
     .d .inner { height: calc(100% - var(--tab)); justify-content: flex-end; padding-bottom: 12vh; }
+
+    /* The card titles' shrink-to-fit sizing (white-space:nowrap + container query units)
+       is tuned against exact font metrics, which can measure slightly wider on some
+       devices than others and push the longer titles ("Interim Transformation",
+       "Fractional CDO / CIAO / NED") past the card's edge. Let them wrap instead so
+       there's no reliance on that measurement being pixel-perfect everywhere. */
+    .card h3 { white-space: normal; line-height: 1.15; }
   }
 </style>
 </head>
