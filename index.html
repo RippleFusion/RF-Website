@@ -859,6 +859,13 @@
     .b, .c, .d { overflow-y: visible; }
     .inner { height: auto; }
 
+    /* The hero's portrait photo is positioned with percentage heights (e.g. 40%) against
+       .page.a itself. With .page given height:auto above, those percentages have nothing
+       definite to resolve against and the portrait collapses/overlaps the text and
+       buttons instead of sitting correctly. Hero content always fits one screen, so give
+       it its definite full-screen height back, same as Work With Me below. */
+    .page.a { height: 100svh; }
+
     /* Work With Me fills exactly one screen of background video with the contact boxes
        pinned to its bottom, over her hand rather than her face - that needs a definite
        height to anchor against, so give this one section its full-screen height back. */
