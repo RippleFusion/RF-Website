@@ -930,13 +930,12 @@
        50-70px), so the offset no longer centres the text. Re-correct for the smaller size. */
     .circle.speak .label { transform: translateY(2px); }
 
-    /* Move the hero text closer to the left edge, pull the portrait in further so the
-       whole composition reads as centred rather than hugging the right side, and align
-       "Working through my PSC" under the "I"/"L" of the name instead of the container's
-       own (smaller) default padding. */
-    .a .hero-foot, .a h1 { margin-left: 2vw; }
-    .portrait { right: 34vw; }
-    .a .trading-as { margin-left: 2vw; }
+    /* Pull the portrait closer to the text, then give the combined text+portrait group
+       equal whitespace on both sides - computed directly from measured glyph/element
+       positions (not just eyeballed) so left and right margins come out equal. */
+    .a .hero-foot, .a h1 { margin-left: 14.9vw; }
+    .portrait { right: 20.9vw; }
+    .a .trading-as { margin-left: 14.9vw; }
   }
 </style>
 </head>
