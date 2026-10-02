@@ -381,7 +381,7 @@
   /* move the woman further left in frame and keep her head in shot */
   .bgvid { object-position: 50% 8%; }
   @media (min-width: 900px) { .bgvid { width: 125%; left: -25%; right: auto; } }
-  @media (max-width: 899px) { .bgvid { object-position: 38% 8%; } }
+  @media (max-width: 899px), (max-height: 500px) and (pointer: coarse) { .bgvid { object-position: 38% 8%; } }
 
   /* video: smaller, still to the left, faded into a matching grey on the right */
   .d { background: #858989; }
