@@ -923,6 +923,12 @@
     /* The portrait sits far enough right that there's a big empty gap between it and the
        hero text - pull it in closer, more like the desktop composition. */
     .portrait { right: 30vw; }
+
+    /* Speak with Me's text offset (translate(1px, 9px)) was tuned for desktop's large
+       circles. Landscape phones are >=701px wide so they get that same desktop rule, but
+       their circles are much smaller (a separate short-viewport rule shrinks them to
+       50-70px), so the offset no longer centres the text. Re-correct for the smaller size. */
+    .circle.speak .label { transform: translateY(2px); }
   }
 </style>
 </head>
