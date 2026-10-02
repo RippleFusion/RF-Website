@@ -358,18 +358,9 @@
     .box { padding: 12px 16px; } .go { width: 32px; height: 32px; } .go::after { left: 11px; top: 11px; }
     .pill { padding: 10px 14px; }
   }
-  /* Once .d .left (the "back to top" column) is hidden, the contact boxes go full-width
-     instead of sitting in a narrow right-hand column, so the ripple needs to be centred
-     on the page as a whole, not off to the right where the old narrow column used to be. */
-  @media (max-width: 899px) {
-    .d .ripples i { right: 50%; top: 74.9%; }
-    /* A tight vertical clip on the full-size (360px, growing to ~936px at peak) ripple
-       only ever showed a thin slice near its own centre, which reads as a flat line
-       rather than a curve. Shrink the ripple itself instead so its curvature is visible
-       within a smaller space, then clip only lightly around that. */
-    .d .ripples i { width: 220px; height: 220px; margin: -110px -110px 0 0; }
-    .d .ripples { clip-path: inset(44% 0 4% 0); }
-  }
+  /* The ripple decoration behind the Work With Me boxes never looked right on mobile at
+     any size/position/clip combination tried, so just hide it there (portrait). */
+  @media (max-width: 899px) { .d .ripples { display: none; } }
   @media (prefers-reduced-motion: reduce) {
     .ripples { display: none; }
     html.js .d:not(.in) .rv { opacity: 1; }
@@ -921,8 +912,8 @@
     .social-links .ico { width: 17px; height: 17px; }
     .d .inner { justify-content: center; padding-top: 0; padding-bottom: 0; }
     .social-box .txt { transform: none; }
-    .d .ripples i { right: 20.3%; }
-    .d .ripples { clip-path: inset(0 0 0 58%); }
+    /* Same as portrait: the ripple never looked right here either, so hide it. */
+    .d .ripples { display: none; }
   }
 </style>
 </head>
