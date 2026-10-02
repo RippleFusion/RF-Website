@@ -356,8 +356,12 @@
   @media (min-width: 900px) { .contact-wrap { grid-template-columns: 1fr 1fr; gap: clamp(32px, 6vw, 96px); } }
   @media (max-width: 600px) {
     .box { padding: 12px 16px; } .go { width: 32px; height: 32px; } .go::after { left: 11px; top: 11px; }
-    .pill { padding: 10px 14px; } .ripples i { right: -10%; }
+    .pill { padding: 10px 14px; }
   }
+  /* Once .d .left (the "back to top" column) is hidden, the contact boxes go full-width
+     instead of sitting in a narrow right-hand column, so the ripple needs to be centred
+     on the page as a whole, not off to the right where the old narrow column used to be. */
+  @media (max-width: 899px) { .d .ripples i { right: 50%; } }
   @media (prefers-reduced-motion: reduce) {
     .ripples { display: none; }
     html.js .d:not(.in) .rv { opacity: 1; }
@@ -910,7 +914,7 @@
     .d .inner { justify-content: center; padding-top: 0; padding-bottom: 0; }
     .social-box .txt { transform: none; }
     .d .ripples i { right: 20.3%; }
-    .d .ripples { left: 58%; }
+    .d .ripples { clip-path: inset(0 0 0 58%); }
   }
 </style>
 </head>
