@@ -899,6 +899,14 @@
      condition above, so portrait phones are untouched. */
   @media (max-height: 500px) and (pointer: coarse) {
     .bgvid { width: 110%; left: -8%; object-position: 30% 8%; }
+
+    /* The "Socials:" label + 6 icons need ~292px to sit on one line, but this landscape
+       column is only ~267px wide, so it wraps to a second line. Shrink the label and icons
+       enough to fit in one row instead, matching the other three boxes. */
+    .social-box { flex-wrap: nowrap; }
+    .social-box .txt strong { font-size: 0.95rem; }
+    .social-links { gap: 8px; }
+    .social-links .ico { width: 17px; height: 17px; }
   }
 </style>
 </head>
