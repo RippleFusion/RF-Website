@@ -87,6 +87,7 @@
     --body: "Instrument Sans", "Helvetica Neue", Arial, sans-serif;
   }
   @media (max-width: 600px) { :root { --tab: 56px; --radius: 22px; } }
+  @media (max-height: 500px) { :root { --tab: 38px; --radius: 16px; } }
   @media (prefers-color-scheme: dark) {
     :root:not([data-theme="light"]) { --page-bg: #0a2427; }
   }
@@ -804,6 +805,19 @@
   @media (min-width: 900px) {
     .sectors .nodes { column-gap: clamp(16px, 1.6vw, 26px); }
     .sectors .nodes::before { width: calc(100% * var(--n) / 6 - clamp(16px, 1.6vw, 26px)); }
+  }
+
+  /* Short viewports (landscape phones): the hero's content was built assuming real vertical
+     room, so compact everything rather than let it overlap once height drops under ~500px. */
+  @media (max-height: 500px) {
+    .a .inner { gap: 0; }
+    .a h1 .hi { margin-bottom: 2px; font-size: 0.9rem; }
+    .a h1 .ian, .a h1 .lloyd { font-size: clamp(2rem, 9vh, 3.4rem); line-height: 1; }
+    .a .role { font-size: 0.82rem; line-height: 1.3; margin-top: 4px; max-width: 32ch; }
+    .a .circles { gap: 10px; padding-bottom: 2px; }
+    .circle { width: clamp(50px, 11vh, 70px); font-size: 0.62rem; padding: 4px; }
+    .a .trading-as { position: static; width: auto; margin-top: 4px; opacity: 0.55; font-size: 0.62rem; }
+    .portrait { max-width: 32vw; }
   }
 </style>
 </head>
