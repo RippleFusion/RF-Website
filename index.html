@@ -872,8 +872,8 @@
        normal flow instead, with fixed spacing that doesn't care what the page's exact height
        is from one moment to the next - nothing left to recalculate, nothing to jump. */
     .page.a { height: 100svh; }
-    .a .circles { margin-top: 74px; }
-    .a .trading-as { position: static; margin: 22px 0 0; }
+    .a .circles { margin-top: clamp(16px, 9vh, 74px); }
+    .a .trading-as { position: static; margin: clamp(8px, 3vh, 22px) 0 0; }
 
     /* Work With Me fills exactly one screen of background video with the contact boxes
        pinned to its bottom, over her hand rather than her face - that needs a definite
