@@ -853,7 +853,7 @@
       top: auto;
       height: auto;
       min-height: 100svh;
-      min-height: 100dvh;
+      min-height: 100lvh;
       overflow: visible;
       box-shadow: none;
     }
@@ -868,13 +868,13 @@
        against, so it all collapsed to the top instead of sitting as designed. Hero content
        always fits one screen, so give both their definite full-screen height back, same
        idea as Work With Me below. */
-    .page.a { height: 100svh; height: 100dvh; }
+    .page.a { height: 100svh; height: 100lvh; }
     .a .inner { height: calc(100% - var(--tab)); }
 
     /* Work With Me fills exactly one screen of background video with the contact boxes
        pinned to its bottom, over her hand rather than her face - that needs a definite
        height to anchor against, so give this one section its full-screen height back. */
-    .page.d { height: 100svh; height: 100dvh; }
+    .page.d { height: 100svh; height: 100lvh; }
     .d .inner { height: calc(100% - var(--tab)); justify-content: flex-end; padding-bottom: 12vh; }
   }
 </style>
