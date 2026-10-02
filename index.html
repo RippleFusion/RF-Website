@@ -299,6 +299,7 @@
     animation-duration: 16s; animation-delay: 13.8s;
   }
   @media (max-width: 700px) {
+    .a .hero-ripples { opacity: 0.55; }
     .a .hero-ripples i { right: 10%; top: 58%; width: 310px; height: 310px; margin: -155px -155px 0 0; }
     .a .hero-ripples i:nth-child(2) { width: 400px; height: 400px; margin: -200px -200px 0 0; }
     .a .hero-ripples i:nth-child(3) { width: 490px; height: 490px; margin: -245px -245px 0 0; }
@@ -503,7 +504,7 @@
     color: inherit; text-decoration: none; transition: opacity .2s;
   }
   .a .trading-as .brand:hover, .a .trading-as .brand:focus-visible { opacity: 1; }
-  @media (max-width: 700px) { .portrait { height: 40%; max-width: 62vw; } .a .trading-as { left: clamp(24px, 6vw, 88px); } }
+  @media (max-width: 700px) { .portrait { height: 40%; max-width: 62vw; } .a .trading-as { left: clamp(24px, 6vw, 88px); right: 16px; } }
   @media (min-width: 1700px) { .a .trading-as { left: calc(clamp(24px, 6vw, 88px) + 16.5vw); } }
 
   /* everything on the first page a touch bigger; Speak with Me moved further right */
@@ -562,7 +563,7 @@
       bottom: calc((1 - var(--k)) * (100% - var(--tab)) - 10px);
     }
   }
-  @media (max-width: 700px) { .portrait { height: 40%; bottom: 0; } }
+  @media (max-width: 700px) { .portrait { height: 40%; bottom: 0; left: auto; right: 2vw; } }
 
   .a h1 .ian, .a h1 .lloyd { font-size: clamp(4.5rem, min(19vw, 20vh), 16.5rem); }
 
