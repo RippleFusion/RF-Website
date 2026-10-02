@@ -363,11 +363,12 @@
      on the page as a whole, not off to the right where the old narrow column used to be. */
   @media (max-width: 899px) {
     .d .ripples i { right: 50%; top: 74.9%; }
-    /* The boxes span almost the full width in portrait, so a horizontal clip (like
-       landscape's) would cut through them. Her face sits in the upper portion of frame
-       instead, so clip vertically: nothing can render above roughly where the first box
-       starts, regardless of how large the ripple's animation scales it. */
-    .d .ripples { clip-path: inset(48% 0 8% 0); }
+    /* A tight vertical clip on the full-size (360px, growing to ~936px at peak) ripple
+       only ever showed a thin slice near its own centre, which reads as a flat line
+       rather than a curve. Shrink the ripple itself instead so its curvature is visible
+       within a smaller space, then clip only lightly around that. */
+    .d .ripples i { width: 220px; height: 220px; margin: -110px -110px 0 0; }
+    .d .ripples { clip-path: inset(44% 0 4% 0); }
   }
   @media (prefers-reduced-motion: reduce) {
     .ripples { display: none; }
