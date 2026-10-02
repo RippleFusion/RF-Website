@@ -528,7 +528,7 @@
     transition: translate .45s cubic-bezier(.2, .7, .2, 1);
     will-change: translate;
   }
-  @media (max-width: 700px) { .portrait { bottom: 0; height: 40%; translate: none; } }
+  @media (max-width: 700px) { .portrait { bottom: 0; height: 40%; translate: none; transition: none; will-change: auto; } }
   @media (prefers-reduced-motion: reduce) { .portrait { transition: none; translate: none; } }
 
   /* portrait: bigger, head sits just under the title strip, anchored to the right so nothing caps its size */
@@ -604,6 +604,10 @@
   .hire-right { display: flex; flex-direction: column; gap: 14px; }
   .cards { display: grid; grid-template-columns: 1fr 1fr; gap: 10px; }
   @media (max-width: 420px) { .cards { gap: 8px; } .card { padding: 14px 14px 16px; } .card p { font-size: 0.85rem; line-height: 1.35; } }
+  /* On narrow/short screens the card grid overflows its own section by a lot (see .b .inner
+     above), and some browsers bleed a blurred card's backdrop-filter through into whatever
+     renders on top of it later (e.g. Projects), as a grey/tinted patch. Drop the blur there;
+     a plain translucent fill still reads fine and avoids the bleed-through entirely. */
   .card {
     background: rgba(255, 255, 255, 0.62); -webkit-backdrop-filter: blur(8px); backdrop-filter: blur(8px);
     border: 1.5px solid rgba(90, 91, 96, 0.18); border-radius: 20px;
@@ -791,7 +795,9 @@
   .c:not(.sectors) .track + .track { border-top: 1.5px solid rgba(16, 24, 32, 0.14); padding-top: clamp(10px, 2vh, 20px); }
   .c:not(.sectors) .track { column-gap: clamp(20px, 2.4vw, 40px); }
   .c:not(.sectors) .nodes { column-gap: clamp(18px, 1.8vw, 30px); }
-  .c:not(.sectors) .nodes::before { width: calc(100% * var(--n) / 6 - clamp(18px, 1.8vw, 30px)); }
+  @media (min-width: 900px) {
+    .c:not(.sectors) .nodes::before { width: calc(100% * var(--n) / 6 - clamp(18px, 1.8vw, 30px)); }
+  }
 
   /* WORK WITH ME: the three boxes sit centred on the page */
   .d .contact-wrap { align-items: center; }
@@ -819,6 +825,16 @@
     .circle { width: clamp(50px, 11vh, 70px); font-size: 0.62rem; padding: 4px; }
     .a .trading-as { position: static; width: auto; margin-top: 4px; opacity: 0.55; font-size: 0.62rem; }
     .portrait { max-width: 32vw; }
+  }
+
+  /* On narrow/short screens the card grid overflows its own section by a lot (see .b .inner
+     above), and some browsers bleed a blurred card's backdrop-filter through into whatever
+     renders on top of it later (e.g. Projects), as a grey/tinted patch. Drop the blur there;
+     a plain translucent fill still reads fine and avoids the bleed-through entirely. This
+     rule is placed last on purpose so it wins over every earlier .card declaration. */
+  @media (max-width: 899px) {
+    .card { -webkit-backdrop-filter: none; backdrop-filter: none; background: rgba(255, 255, 255, 0.86); }
+    .card.feature { background: rgba(255, 255, 255, 0.86); }
   }
 </style>
 </head>
