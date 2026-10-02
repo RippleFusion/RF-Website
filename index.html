@@ -571,7 +571,8 @@
   .a h1 .ian, .a h1 .lloyd { font-size: clamp(4.5rem, min(19vw, 20vh), 16.5rem); }
 
   a.circle, button.circle { display: inline-flex; align-items: center; justify-content: center; text-align: center; text-decoration: none; }
-  .circle.speak .label { display: block; transform: translate(1px, 5px); }
+  .circle.speak .label { display: block; }
+  @media (min-width: 701px) { .circle.speak .label { transform: translate(1px, 5px); } }
 
   .b { overflow-y: auto; }
 
