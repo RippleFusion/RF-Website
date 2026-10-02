@@ -87,7 +87,7 @@
     --body: "Instrument Sans", "Helvetica Neue", Arial, sans-serif;
   }
   @media (max-width: 600px) { :root { --tab: 56px; --radius: 22px; } }
-  @media (max-height: 500px) { :root { --tab: 38px; --radius: 16px; } }
+  @media (max-height: 500px) and (pointer: coarse) { :root { --tab: 38px; --radius: 16px; } }
   @media (prefers-color-scheme: dark) {
     :root:not([data-theme="light"]) { --page-bg: #0a2427; }
   }
@@ -809,7 +809,7 @@
 
   /* Short viewports (landscape phones): the hero's content was built assuming real vertical
      room, so compact everything rather than let it overlap once height drops under ~500px. */
-  @media (max-height: 500px) {
+  @media (max-height: 500px) and (pointer: coarse) {
     .a .inner { gap: 0; }
     .a h1 .hi { margin-bottom: 2px; font-size: 0.9rem; }
     .a h1 .ian, .a h1 .lloyd { font-size: clamp(2rem, 9vh, 3.4rem); line-height: 1; }
