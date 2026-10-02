@@ -381,7 +381,7 @@
   /* move the woman further left in frame and keep her head in shot */
   .bgvid { object-position: 50% 8%; }
   @media (min-width: 900px) { .bgvid { width: 125%; left: -25%; right: auto; } }
-  @media (max-width: 899px), (max-height: 500px) and (pointer: coarse) { .bgvid { object-position: 38% 8%; } }
+  @media (max-width: 899px), (max-height: 500px) and (pointer: coarse) { .bgvid { object-position: 20% 8%; } }
 
   /* video: smaller, still to the left, faded into a matching grey on the right */
   .d { background: #858989; }
@@ -887,6 +887,14 @@
        "Fractional CDO / CIAO / NED") past the card's edge. Let them wrap instead so
        there's no reliance on that measurement being pixel-perfect everywhere. */
     .card h3 { white-space: normal; line-height: 1.15; }
+
+    /* On landscape phones wider than 899px (e.g. iPhone Air/Pro Max), the min-width:900px
+       desktop rule for .bgvid's width/left was winning the cascade over the fix above
+       since it's declared later in the file, leaving no horizontal crop headroom for
+       object-position to actually pan the video - so she barely moved. Zoom the video in
+       here (placed last, after that desktop rule, so it wins) to give object-position room
+       to pan her further left. */
+    .bgvid { width: 140%; left: -20%; }
   }
 </style>
 </head>
