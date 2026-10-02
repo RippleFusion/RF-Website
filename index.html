@@ -853,7 +853,7 @@
       top: auto;
       height: auto;
       min-height: 100svh;
-      min-height: var(--vh100, 100svh);
+      min-height: 100dvh;
       overflow: visible;
       box-shadow: none;
     }
@@ -868,13 +868,13 @@
        against, so it all collapsed to the top instead of sitting as designed. Hero content
        always fits one screen, so give both their definite full-screen height back, same
        idea as Work With Me below. */
-    .page.a { height: 100svh; height: var(--vh100, 100svh); }
+    .page.a { height: 100svh; height: 100dvh; }
     .a .inner { height: calc(100% - var(--tab)); }
 
     /* Work With Me fills exactly one screen of background video with the contact boxes
        pinned to its bottom, over her hand rather than her face - that needs a definite
        height to anchor against, so give this one section its full-screen height back. */
-    .page.d { height: 100svh; height: var(--vh100, 100svh); }
+    .page.d { height: 100svh; height: 100dvh; }
     .d .inner { height: calc(100% - var(--tab)); justify-content: flex-end; padding-bottom: 12vh; }
   }
 </style>
@@ -1054,16 +1054,6 @@
 </main>
 
 <script>
-  // iOS Safari's address bar collapses/expands while scrolling, which can make svh
-  // recalculate live even though it's meant to stay fixed - shifting anything pinned to
-  // the bottom of a full-screen section. Measure the viewport height once instead and use
-  // that fixed value, so the hero and Work With Me sections don't shift while scrolling.
-  (function () {
-    function setVH() { document.documentElement.style.setProperty('--vh100', window.innerHeight + 'px'); }
-    setVH();
-    window.addEventListener('orientationchange', function () { setTimeout(setVH, 300); });
-  })();
-
   var btn = document.getElementById('top');
   if (btn) {
     btn.addEventListener('click', function () {
