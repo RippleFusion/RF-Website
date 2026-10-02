@@ -846,8 +846,11 @@
      let the page scroll normally instead, one section after another - simpler, and the
      tab-click "jump to section" behaviour above still works unchanged since it falls back
      to each page's natural document position once nothing is sticky any more.
-     Placed last so it wins over every earlier .page/.inner declaration. */
-  @media (max-width: 899px) {
+     Placed last so it wins over every earlier .page/.inner declaration. Also triggers on
+     short touch viewports (landscape phones) regardless of width: a Pro Max in landscape
+     is 932px wide (past the 899px cutoff) but only ~430px tall, nowhere near enough room
+     for the desktop sticky-stack to work, so it was clipping and overlapping content. */
+  @media (max-width: 899px), (max-height: 500px) and (pointer: coarse) {
     .page {
       position: relative;
       top: auto;
