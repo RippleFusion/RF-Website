@@ -914,6 +914,11 @@
     .social-box .txt { transform: none; }
     /* Same as portrait: the ripple never looked right here either, so hide it. */
     .d .ripples { display: none; }
+
+    /* About Me's "Hire me as..." heading sits vertically centred against the cards
+       column, which pushes it noticeably lower than the cards' own top edge on a short
+       landscape viewport - align both to the top instead, like desktop. */
+    .hire { align-items: start; }
   }
 </style>
 </head>
