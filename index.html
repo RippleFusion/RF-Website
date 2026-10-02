@@ -866,6 +866,13 @@
        it its definite full-screen height back, same as Work With Me below. */
     .page.a { height: 100svh; }
 
+    /* Give the buttons breathing room above them, and put the "Working through my PSC"
+       line back into normal flow below the buttons (it was pinned with position:absolute
+       to the bottom of the page, which depends on the page's height being exactly right
+       and kept landing on top of the portrait/buttons) with clear space of its own. */
+    .a .circles { margin-top: clamp(16px, 4vh, 28px); }
+    .a .trading-as { position: static; margin: clamp(14px, 3vh, 24px) 0 0; }
+
     /* Work With Me fills exactly one screen of background video with the contact boxes
        pinned to its bottom, over her hand rather than her face - that needs a definite
        height to anchor against, so give this one section its full-screen height back. */
