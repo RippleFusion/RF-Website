@@ -941,6 +941,12 @@
     .a .role { margin-top: 20px; }
     .a .circles { margin-top: 24px; }
   }
+
+  /* The longer tagline now wraps to one more line on portrait phones than before, pushing
+     it down close to the portrait's hairline. Shrink the portrait very slightly so its top
+     edge sits a bit lower, clear of the extra line - scoped to portrait widths only
+     (landscape phones are well over 700px wide, so this doesn't touch them). */
+  @media (max-width: 700px) { .portrait { height: 37%; } }
 </style>
 </head>
 <body>
