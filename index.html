@@ -586,10 +586,9 @@
      overflowing flex child clips its top invisibly (with a sliver peeking through at the
      tab boundary) and traps the rest out of scroll reach, so start from the top instead */
   @media (max-width: 899px) { .b .inner { height: auto; min-height: calc(100% - var(--tab)); justify-content: flex-start; } }
-  @media (min-width: 900px) { .hire { grid-template-columns: 0.85fr 1.15fr; gap: clamp(28px, 4.5vw, 72px); } }
-  .hire-left { display: flex; flex-direction: column; gap: clamp(12px, 2.2vh, 22px); align-items: flex-start; }
-  .b .hire h2 { font-size: clamp(2.1rem, min(4.2vw, 7.2vh), 4.4rem); max-width: 12ch; }
-  .hire-lead { font-family: var(--logo); color: var(--ink); font-size: clamp(1rem, min(1.35vw, 2.4vh), 1.35rem); line-height: 1.5; max-width: 40ch; }
+  .hire-left { display: flex; flex-direction: column; gap: clamp(12px, 2.2vh, 22px); align-items: flex-start; max-width: 68ch; margin: 0 auto; }
+  .b .hire h2 { font-size: clamp(2.1rem, min(4.2vw, 7.2vh), 4.4rem); max-width: 18ch; }
+  .hire-lead { font-family: var(--logo); color: var(--ink); font-size: clamp(1rem, min(1.35vw, 2.4vh), 1.35rem); line-height: 1.5; max-width: 62ch; }
   .hire-lead a { color: inherit; text-decoration: underline; text-underline-offset: 2px; opacity: 0.8; }
   .hire-lead a:hover, .hire-lead a:focus-visible { opacity: 1; }
   .hire-quote {
@@ -606,7 +605,6 @@
   .cta:hover { background: var(--card-orange); transform: translateY(-2px); }
   .cta:focus-visible { outline: 3px solid var(--ink); outline-offset: 3px; }
 
-  .hire-right { display: flex; flex-direction: column; gap: 14px; }
   .cards { display: grid; grid-template-columns: 1fr 1fr; gap: 10px; }
   @media (max-width: 420px) { .cards { gap: 8px; } .card { padding: 14px 14px 16px; } .card p { font-size: 0.85rem; line-height: 1.35; } }
   /* On narrow/short screens the card grid overflows its own section by a lot (see .b .inner
@@ -644,8 +642,6 @@
   /* card titles stay on one line: size scales with the card width */
   .card { container-type: inline-size; }
   .card h3 { white-space: nowrap; font-size: clamp(0.95rem, min(5.6cqw, 2.7vh), 1.5rem); }
-
-  @media (min-width: 900px) { .hire-right { margin-left: clamp(-64px, -3.5vw, -20px); } }
 
   /* the AI-fluent box is the featured one */
   .card.feature { position: relative; background: linear-gradient(140deg, rgba(255, 255, 255, 0.88), rgba(255, 244, 238, 0.6)); border-color: transparent; }
