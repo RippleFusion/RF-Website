@@ -157,7 +157,6 @@
 
   .a { background: #ffffff; color: var(--ink); }
   .b { background: var(--coral); color: var(--ink); }
-  .c { background: var(--peri); color: var(--ink); }
   .d { background: var(--chalk); color: var(--ink); }
 
   .word {
@@ -591,6 +590,8 @@
   .hire-left { display: flex; flex-direction: column; gap: clamp(12px, 2.2vh, 22px); align-items: flex-start; }
   .b .hire h2 { font-size: clamp(2.1rem, min(4.2vw, 7.2vh), 4.4rem); max-width: 12ch; }
   .hire-lead { font-family: var(--logo); color: var(--ink); font-size: clamp(1rem, min(1.35vw, 2.4vh), 1.35rem); line-height: 1.5; max-width: 40ch; }
+  .hire-lead a { color: inherit; text-decoration: underline; text-underline-offset: 2px; opacity: 0.8; }
+  .hire-lead a:hover, .hire-lead a:focus-visible { opacity: 1; }
   .hire-quote {
     font-family: var(--logo); font-weight: 600; color: var(--ink);
     font-size: clamp(1.05rem, min(1.5vw, 2.6vh), 1.5rem); line-height: 1.3; max-width: 30ch;
@@ -687,136 +688,9 @@
   .card h3::before { background: var(--accent, var(--card-orange)); }
   .card:hover { border-color: var(--accent, var(--card-orange)); }
 
-  /* PROJECTS: timeline. Add a step by copying one <li> inside a track and raising that track's --n */
-  .c { overflow-y: auto; }
-  .c .inner { height: calc(100% - var(--tab)); min-height: 0; justify-content: center; padding: clamp(14px, 3vh, 32px) clamp(16px, 4vw, 64px); }
-  .tl { width: 100%; display: flex; flex-direction: column; gap: clamp(16px, 3.2vh, 34px); }
-  .c h2 { font-size: clamp(2rem, min(4vw, 6.8vh), 4.2rem); max-width: 18ch; }
-  .track { display: flex; flex-direction: column; gap: 14px; }
-  .tag {
-    align-self: flex-start; margin: 0; max-width: none; border-radius: 999px;
-    padding: calc(5px + 0.12em) 14px calc(5px - 0.12em);
-    background: rgba(255, 255, 255, 0.7); color: var(--ink);
-    font-family: var(--logo); font-weight: 600; font-size: clamp(0.85rem, min(1vw, 1.8vh), 1rem);
-    display: inline-flex; align-items: center; justify-content: center; line-height: 1.1;
-  }
-  .nodes { list-style: none; margin: 0; padding: 0; position: relative; display: grid; grid-template-columns: repeat(6, 1fr); column-gap: 16px; }
-  .nodes::before {
-    content: ""; position: absolute; left: 0; top: 11px; height: 4px; border-radius: 2px;
-    width: calc(100% * var(--n) / 6 - 16px); background: rgba(16, 24, 32, 0.35);
-    transform-origin: left center;
-  }
-  .nodes li { position: relative; display: flex; flex-direction: column; gap: 4px; padding-right: 8px; }
-  .dot {
-    display: block; width: 26px; height: 26px; border-radius: 50%; background: var(--c);
-    border: 5px solid var(--ring, var(--peri)); box-sizing: content-box; margin: -5px 0 8px -5px;
-    box-shadow: 0 0 0 2px var(--c); transition: transform .2s; position: relative; z-index: 1;
-  }
-  .nodes li:hover .dot { transform: scale(1.25); }
-  .nodes b { font-family: var(--display); font-weight: 800; letter-spacing: -0.02em; color: var(--ink); font-size: clamp(1rem, min(1.5vw, 2.7vh), 1.45rem); line-height: 1.1; }
-  .nodes span { font-family: var(--logo); color: var(--ink); opacity: 0.85; font-size: clamp(0.88rem, min(1.05vw, 1.9vh), 1.08rem); line-height: 1.35; }
-
-  html.js .c:not(.in) .rv { opacity: 0; }
-  .c.in .rv { animation: rise .7s cubic-bezier(.2, .8, .2, 1) backwards; animation-delay: calc(var(--d, 0) * 110ms); }
-  .c.in .nodes::before { animation: draw 1.1s ease-out backwards .3s; }
-  @keyframes draw { from { transform: scaleX(0); } to { transform: scaleX(1); } }
-  @media (prefers-reduced-motion: reduce) { html.js .c:not(.in) .rv { opacity: 1; } .c.in .rv, .c.in .nodes::before { animation: none; } .dot { transition: none; } }
-
-  @media (max-width: 899px) {
-    .nodes { grid-template-columns: 1fr; row-gap: 14px; padding-left: 34px; }
-    .nodes::before { left: 11px; top: 6px; bottom: 6px; width: 4px; height: auto; }
-    .nodes li { padding-right: 0; }
-    .dot { position: absolute; left: -34px; top: 0; margin: 0; width: 20px; height: 20px; border-width: 4px; }
-  }
-
-  /* PROJECTS: compact three-lane timeline, headline pulled to the top */
-  .c .inner { justify-content: flex-start; padding-top: clamp(10px, 2vh, 22px); padding-bottom: clamp(10px, 2vh, 22px); }
-  .tl { gap: clamp(10px, 2.2vh, 22px); }
-  .c h2 { font-size: clamp(1.8rem, min(3.4vw, 5.6vh), 3.5rem); max-width: none; }
-  .track { display: grid; grid-template-columns: clamp(92px, 11vw, 168px) 1fr; column-gap: 16px; align-items: start; }
-  .tag { border-radius: 14px; padding: calc(6px + 0.12em) 12px calc(6px - 0.12em); text-align: center; line-height: 1.15; font-size: clamp(0.8rem, min(0.95vw, 1.7vh), 0.98rem); }
-  .nodes b { font-size: clamp(0.92rem, min(1.28vw, 2.35vh), 1.3rem); }
-  .nodes span { font-size: clamp(0.8rem, min(0.95vw, 1.7vh), 1rem); line-height: 1.32; }
-  .dot { width: 20px; height: 20px; border-width: 4px; margin: -4px 0 6px -4px; box-shadow: 0 0 0 2px var(--c); }
-  .nodes::before { top: 8px; height: 4px; }
-  @media (max-width: 899px) {
-    .track { grid-template-columns: 1fr; row-gap: 10px; }
-    .dot { width: 18px; height: 18px; border-width: 4px; margin: 0; }
-  }
-  @media (min-width: 900px) { .tag { align-self: center; } }
-
-  @media (max-width: 899px) {
-    .nodes::before { left: 10px; top: 6px; bottom: 6px; width: 4px; height: auto; transform-origin: center top; }
-    .dot { left: -34px; top: 0; }
-  }
-
-  .tl-intro { margin: calc(-1 * clamp(2px, 0.8vh, 8px)) 0 0; max-width: 88ch; font-family: var(--logo); color: var(--ink); font-size: clamp(0.95rem, min(1.25vw, 2.2vh), 1.25rem); line-height: 1.4; }
-  .tl { gap: clamp(8px, 1.8vh, 18px); }
-
-  .tl-intro + .track { margin-top: clamp(10px, 2.4vh, 26px); }
-
-  /* four lanes: tighter so they all fit under the strips */
-  .tl { gap: clamp(6px, 1.4vh, 14px); }
-  .tl-intro + .track { margin-top: clamp(8px, 1.8vh, 20px); }
-  .c h2 { font-size: clamp(1.7rem, min(3.1vw, 5.2vh), 3.2rem); }
-  .nodes b { font-size: clamp(0.9rem, min(1.2vw, 2.2vh), 1.2rem); }
-  .nodes span { font-size: clamp(0.78rem, min(0.92vw, 1.6vh), 0.98rem); line-height: 1.3; }
-
-  /* SECTORS page */
-  .sectors { background: #b9d9c6; --ring: #b9d9c6; }
-
-  .track-head { display: flex; flex-direction: column; align-items: center; gap: 6px; }
-  .track-head .tag { align-self: center; }
-  .track-connector { width: 2px; height: 10px; background: rgba(16, 24, 32, 0.3); border-radius: 1px; }
-  .track-note {
-    margin: 0 0 0 20px; max-width: none; text-align: left; font-family: var(--logo); color: var(--ink); opacity: 0.75;
-    font-size: clamp(0.78rem, min(0.85vw, 1.5vh), 0.88rem); line-height: 1.4;
-  }
-
-  /* SECTORS: same timeline, but each step is a frosted tile strung along the line */
-  .sectors .tag { background: var(--ink); color: #ffffff; }
-  .sectors .nodes li {
-    background: rgba(255, 255, 255, 0.82); border: 1.5px solid rgba(16, 24, 32, 0.1); border-radius: 16px;
-    padding: 10px 12px 10px; box-shadow: 0 6px 16px rgba(16, 24, 32, 0.08);
-    transition: transform .2s, box-shadow .2s;
-  }
-  .sectors .nodes li:hover { transform: translateY(-3px); box-shadow: 0 12px 24px rgba(16, 24, 32, 0.14); }
-  .sectors .dot { border-color: #ffffff; }
-  @media (min-width: 900px) {
-    .sectors .nodes::before { top: 20px; height: 4px; background: rgba(16, 24, 32, 0.4); }
-    .sectors .nodes { column-gap: 14px; }
-  }
-  @media (max-width: 899px) {
-    .sectors .nodes li { padding: 10px 12px; }
-    .sectors .dot { border-color: var(--ring); }
-  }
-  @media (prefers-reduced-motion: reduce) { .sectors .nodes li { transition: none; } }
-
-  /* PROJECTS: more room in and around the lanes */
-  .c:not(.sectors) .inner { padding-top: clamp(16px, 3.4vh, 36px); padding-bottom: clamp(14px, 2.6vh, 28px); }
-  .c:not(.sectors) .tl { gap: clamp(10px, 2.2vh, 22px); }
-  .c:not(.sectors) .tl-intro + .track { margin-top: clamp(14px, 3vh, 32px); }
-  .c:not(.sectors) .track + .track { border-top: 1.5px solid rgba(16, 24, 32, 0.14); padding-top: clamp(10px, 2vh, 20px); }
-  .c:not(.sectors) .track { column-gap: clamp(20px, 2.4vw, 40px); }
-  .c:not(.sectors) .nodes { column-gap: clamp(18px, 1.8vw, 30px); }
-  @media (min-width: 900px) {
-    .c:not(.sectors) .nodes::before { width: calc(100% * var(--n) / 6 - clamp(18px, 1.8vw, 30px)); }
-  }
-
   /* WORK WITH ME: the three boxes sit centred on the page */
   .d .contact-wrap { align-items: center; }
   .d .right { justify-content: center; }
-
-  /* SECTORS: more room in and around the lanes */
-  .sectors .inner { padding-top: clamp(16px, 3.2vh, 34px); padding-bottom: clamp(14px, 2.4vh, 26px); }
-  .sectors .tl { gap: clamp(10px, 2vh, 20px); }
-  .sectors .tl-intro + .track { margin-top: clamp(12px, 2.6vh, 28px); }
-  .sectors .track + .track { border-top: 1.5px solid rgba(16, 24, 32, 0.14); padding-top: clamp(10px, 1.8vh, 18px); }
-  .sectors .track { column-gap: clamp(20px, 2.4vw, 40px); }
-  @media (min-width: 900px) {
-    .sectors .nodes { column-gap: clamp(16px, 1.6vw, 26px); }
-    .sectors .nodes::before { width: calc(100% * var(--n) / 6 - clamp(16px, 1.6vw, 26px)); }
-  }
 
   /* Short viewports (landscape phones): the hero's content was built assuming real vertical
      room, so compact everything rather than let it overlap once height drops under ~500px. */
@@ -976,124 +850,17 @@
       <div class="hire">
         <div class="hire-left">
           <h2 class="rv" style="--d:0">Hire me as your interim transformation director.</h2>
-          <p class="hire-lead rv" style="--d:1">Private equity-backed businesses bring me in when value creation is under pressure, complex change has lost momentum, or the business needs to be ready for its next owner. I lead delivery hands-on, stay through to the finish, and only step back once the business is running it on its own.</p>
-          <div class="cta-row rv" style="--d:2"><span class="bar" aria-hidden="true"></span><a class="cta" href="https://calendly.com/ian-ianlloyd/30min" target="_blank" rel="noopener">Book a call</a></div>
-        </div>
-        <div class="hire-right">
-          <div class="cards">
-            <article class="card rv" style="--d:1"><h3>Interim Transformation</h3><p>Leading carve-outs, post-merger integration and enterprise change: finance separation, ERP and data migration, and operating model design. I stay until the work is done, then make a clean exit once the business is delivering.</p></article>
-            <article class="card feature rv" style="--d:2"><h3>AI-Fluent Leadership</h3><p>I know where AI creates real value and where it doesn't, and how to weave it into strategy and decisions rather than bolt it on. I bring it into the workflows you already run and build it around a real business problem.</p></article>
-            <article class="card rv" style="--d:3"><h3>Fractional CDO / CIAO / NED</h3><p>Part-time C-suite leadership for your data and AI, plus board-level oversight as a non-executive director. I set the strategy, put governance and data foundations in place, and steer delivery, so transformation and AI adoption are defensible, not just impressive in a demo.</p></article>
-            <article class="card rv" style="--d:4"><h3>Private Equity Delivery</h3><p>Extra bandwidth for sponsors to deliver a plan that's already built. Bring me in early rather than as a last resort, or mid-programme when the direction needs a reset, and I'll drive it to the finish.</p></article>
-          </div>
+          <p class="hire-lead rv" style="--d:1">I'm an interim transformation director with 20+ years' experience, brought in by private equity-backed and global businesses to scale without service slipping: integrating acquisitions, redesigning operating models, taking cost out and getting complex change delivered.</p>
+          <p class="hire-lead rv" style="--d:2">I work alongside CEOs, boards and leadership teams, and I stay until the results are delivered. AI and automation are levers, used where they pay back, not the starting point.</p>
+          <p class="hire-lead rv" style="--d:3">I work through Ripple Fusion, my interim and advisory business transformation practice. <a href="https://ripplefusion.com" target="_blank" rel="noopener">See how I work with businesses</a>.</p>
+          <p class="hire-lead rv" style="--d:4">Based in Kent, working across the UK and Europe. I speak English and Spanish.</p>
+          <div class="cta-row rv" style="--d:5"><span class="bar" aria-hidden="true"></span><a class="cta" href="https://calendly.com/ian-ianlloyd/30min" target="_blank" rel="noopener">Book a call</a></div>
         </div>
       </div>
     </div>
   </section>
 
-  <section class="page c" style="--i:2" aria-label="Projects">
-    <div class="tab"><span><span class="o">P</span>ROJECTS</span></div>
-    <div class="inner">
-      <div class="tl">
-        <h2 class="rv" style="--d:0">Experience across the whole journey.</h2>
-        <p class="tl-intro rv" style="--d:1">Started as a developer, but a manager at heart: a safe pair of hands at C-suite level, with vast experience across everything below.</p>
-        <div class="track rv" style="--d:2">
-          <p class="tag">Platforms</p>
-          <ol class="nodes" style="--n:6">
-            <li class="rv" style="--c:#bd5533;--d:3"><i class="dot"></i><b>ServiceNow</b><span>IT service management and workflow automation.</span></li>
-            <li class="rv" style="--c:#0f3b40;--d:4"><i class="dot"></i><b>Workday</b><span>HR, finance and planning in the cloud.</span></li>
-            <li class="rv" style="--c:#e0a020;--d:5"><i class="dot"></i><b>Salesforce</b><span>Commercial systems and customer data.</span></li>
-            <li class="rv" style="--c:#bd5533;--d:6"><i class="dot"></i><b>Microsoft Dynamics (CE/BC)</b><span>ERP and CRM for finance and sales.</span></li>
-            <li class="rv" style="--c:#0f3b40;--d:7"><i class="dot"></i><b>Oracle</b><span>ERP, finance and data platforms.</span></li>
-            <li class="rv" style="--c:#e0a020;--d:8"><i class="dot"></i><b>SAP</b><span>Legacy ERP through to S/4HANA, finance and data migration.</span></li>
-          </ol>
-        </div>
-        <div class="track rv" style="--d:3">
-          <p class="tag">AI</p>
-          <ol class="nodes" style="--n:6">
-            <li class="rv" style="--c:#bd5533;--d:4"><i class="dot"></i><b>AI Strategy</b><span>Where AI creates real value, and where it doesn't.</span></li>
-            <li class="rv" style="--c:#0f3b40;--d:5"><i class="dot"></i><b>Frontier models</b><span>Choosing and using Claude, OpenAI, Copilot and more.</span></li>
-            <li class="rv" style="--c:#e0a020;--d:6"><i class="dot"></i><b>Frameworks</b><span>The landscape moves fast, from LangChain onwards. I track it constantly and stay ahead of it.</span></li>
-            <li class="rv" style="--c:#bd5533;--d:7"><i class="dot"></i><b>Agents</b><span>Production-grade agents that do real work.</span></li>
-            <li class="rv" style="--c:#0f3b40;--d:8"><i class="dot"></i><b>Prototype to production</b><span>Proofs of concept into live services, with measurable ROI.</span></li>
-            <li class="rv" style="--c:#e0a020;--d:9"><i class="dot"></i><b>Governance</b><span>Controls that make AI defensible, using my auditing and cyber background.</span></li>
-          </ol>
-        </div>
-        <div class="track rv" style="--d:4">
-          <p class="tag">Integration</p>
-          <ol class="nodes" style="--n:6">
-            <li class="rv" style="--c:#bd5533;--d:5"><i class="dot"></i><b>MuleSoft</b><span>API-led integration across systems.</span></li>
-            <li class="rv" style="--c:#0f3b40;--d:6"><i class="dot"></i><b>Dell Boomi</b><span>Cloud-native integration platform.</span></li>
-            <li class="rv" style="--c:#e0a020;--d:7"><i class="dot"></i><b>Informatica</b><span>Data integration, quality and master data management.</span></li>
-            <li class="rv" style="--c:#bd5533;--d:8"><i class="dot"></i><b>Alteryx</b><span>Data preparation and analytics automation.</span></li>
-            <li class="rv" style="--c:#0f3b40;--d:9"><i class="dot"></i><b>MCP</b><span>Connecting AI models to tools and data.</span></li>
-            <li class="rv" style="--c:#e0a020;--d:10"><i class="dot"></i><b>A2A</b><span>Agent-to-agent communication standards.</span></li>
-          </ol>
-        </div>
-        <div class="track rv" style="--d:5">
-          <p class="tag">Data &amp; Reporting</p>
-          <ol class="nodes" style="--n:6">
-            <li class="rv" style="--c:#bd5533;--d:6"><i class="dot"></i><b>Databricks</b><span>Lakehouse platforms and data engineering.</span></li>
-            <li class="rv" style="--c:#0f3b40;--d:7"><i class="dot"></i><b>Snowflake</b><span>Cloud data warehousing and sharing.</span></li>
-            <li class="rv" style="--c:#e0a020;--d:8"><i class="dot"></i><b>SAP Analytics Cloud</b><span>Planning and analytics on SAP data.</span></li>
-            <li class="rv" style="--c:#bd5533;--d:9"><i class="dot"></i><b>Power BI</b><span>Reporting and dashboards people actually use.</span></li>
-            <li class="rv" style="--c:#0f3b40;--d:10"><i class="dot"></i><b>Tableau</b><span>Visual analytics and self-service reporting.</span></li>
-            <li class="rv" style="--c:#e0a020;--d:11"><i class="dot"></i><b>Qlik</b><span>Associative analytics and self-service BI.</span></li>
-          </ol>
-        </div>
-      </div>
-    </div>
-  </section>
-
-  <section class="page c sectors" style="--i:3" aria-label="Sectors">
-    <div class="tab"><span><span class="o">S</span>ECTORS</span></div>
-    <div class="inner">
-      <div class="tl">
-        <h2 class="rv" style="--d:0">Different sectors, same fundamentals.</h2>
-        <p class="tl-intro rv" style="--d:1">Transferable skills and a firm understanding of business, from pharma to pest control, mean I can step into vastly different sectors and deliver.</p>
-        
-        <div class="track rv" style="--d:2">
-          <p class="tag">Health, Consumer, Financial and Public Services</p>
-          <ol class="nodes" style="--n:6">
-            <li class="rv" style="--c:#bd5533;--d:3"><i class="dot"></i><b>Pharma</b><span>Roche, GSK and AstraZeneca.</span></li>
-            <li class="rv" style="--c:#0f3b40;--d:4"><i class="dot"></i><b>FMCG</b><span>British American Tobacco.</span></li>
-            <li class="rv" style="--c:#e0a020;--d:5"><i class="dot"></i><b>Healthcare</b><span>IQVIA.</span></li>
-            <li class="rv" style="--c:#bd5533;--d:6"><i class="dot"></i><b>Retail</b><span>Boots.</span></li>
-            <li class="rv" style="--c:#0f3b40;--d:7"><i class="dot"></i><b>Financial Services</b><span>Vistra.</span></li>
-            <li class="rv" style="--c:#e0a020;--d:8"><i class="dot"></i><b>Public services</b><span>Serco.</span></li>
-          </ol>
-        </div>
-        <div class="track rv" style="--d:3">
-          <p class="tag">Technology and Industry</p>
-          <ol class="nodes" style="--n:6">
-            <li class="rv" style="--c:#bd5533;--d:4"><i class="dot"></i><b>Space</b><span>European Space Agency.</span></li>
-            <li class="rv" style="--c:#0f3b40;--d:5"><i class="dot"></i><b>Maritime Telecoms</b><span>Marlink.</span></li>
-            <li class="rv" style="--c:#e0a020;--d:6"><i class="dot"></i><b>Telecoms</b><span>Vodafone.</span></li>
-            <li class="rv" style="--c:#bd5533;--d:7"><i class="dot"></i><b>IT services</b><span>CGI Group.</span></li>
-            <li class="rv" style="--c:#0f3b40;--d:8"><i class="dot"></i><b>Automotive</b><span>Pirelli.</span></li>
-            <li class="rv" style="--c:#e0a020;--d:9"><i class="dot"></i><b>Pest control</b><span>Pest Control Partnership.</span></li>
-          </ol>
-        </div>
-        <div class="track rv" style="--d:4">
-          <div class="track-head">
-            <p class="tag">Private Equity</p>
-            <span class="track-connector" aria-hidden="true"></span>
-            <p class="track-note">EQT &middot; CPPIB &middot; Providence &middot; TPG Capital &middot; Partners Group &middot; Leonard Green &amp; Partners</p>
-          </div>
-          <ol class="nodes" style="--n:6">
-            <li class="rv" style="--c:#bd5533;--d:5"><i class="dot"></i><b>Due diligence</b><span>Systems, data and commercial risk, before the deal closes.</span></li>
-            <li class="rv" style="--c:#0f3b40;--d:6"><i class="dot"></i><b>Carve-out</b><span>Separating finance, systems, data and people.</span></li>
-            <li class="rv" style="--c:#e0a020;--d:7"><i class="dot"></i><b>Day one</b><span>An independent operation, with commercial continuity.</span></li>
-            <li class="rv" style="--c:#bd5533;--d:8"><i class="dot"></i><b>Integration</b><span>Operating model, CRM, Ops systems, ERP and data migration.</span></li>
-            <li class="rv" style="--c:#0f3b40;--d:9"><i class="dot"></i><b>Value creation</b><span>Measurable movement in revenue, cost and speed.</span></li>
-            <li class="rv" style="--c:#e0a020;--d:10"><i class="dot"></i><b>Exit readiness</b><span>Clean data, systems and processes for the next buyer.</span></li>
-          </ol>
-        </div>
-      </div>
-    </div>
-  </section>
-
-  <section class="page d" style="--i:4" aria-label="Work with me">
+  <section class="page d" style="--i:2" aria-label="Work with me">
     <div class="tab"><span><span class="o">W</span>ORK <span class="o">W</span>ITH <span class="o">M</span>E</span></div>
     <video class="bgvid" autoplay muted loop playsinline preload="auto" poster="assets/img/work-with-me-poster.jpg" aria-hidden="true" tabindex="-1"><source src="assets/video/work-with-me-bg.mp4" type="video/mp4"></video>
     <div class="ripples" aria-hidden="true"><i></i><i></i><i></i></div>
@@ -1216,25 +983,7 @@
     io.observe(b);
   })();
 
-  (function () {
-    var c = document.querySelector('.page.c');
-    if (!c) return;
-    if (!('IntersectionObserver' in window)) { c.classList.add('in'); return; }
-    var io = new IntersectionObserver(function (entries) {
-      entries.forEach(function (e) { if (e.isIntersecting) { c.classList.add('in'); io.disconnect(); } });
-    }, { threshold: 0.3 });
-    io.observe(c);
-  })();
 
-  (function () {
-    var p = document.querySelector('.page.sectors');
-    if (!p) return;
-    if (!('IntersectionObserver' in window)) { p.classList.add('in'); return; }
-    var io = new IntersectionObserver(function (entries) {
-      entries.forEach(function (e) { if (e.isIntersecting) { p.classList.add('in'); io.disconnect(); } });
-    }, { threshold: 0.3 });
-    io.observe(p);
-  })();
 </script>
 </body>
 </html>
