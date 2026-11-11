@@ -1,19 +1,19 @@
 # ianlloyd.com
 
-Single-page personal site: five sticky-scroll cards — Ian Lloyd, About Me, Projects, Sectors, Work With Me.
+Single-page personal site: four sticky-scroll cards — Ian Lloyd, About me, Track record, Work with me.
 
 ## Structure
 
 ```
-index.html                       markup, styles and script (unchanged design, all inline)
-assets/img/ian-lloyd-portrait.webp   portrait on the "Ian Lloyd" card
-assets/img/work-with-me-poster.jpg   poster frame for the background video
-assets/video/work-with-me-bg.mp4     background video on "Work With Me"
-CNAME                             tells GitHub Pages the custom domain
-.github/workflows/deploy.yml      builds + deploys the site to GitHub Pages on push to main
+index.html                           markup, styles and script (all inline)
+assets/img/ian-lloyd-portrait.webp   portrait in the framed panel on the first card
+CNAME                                tells GitHub Pages the custom domain
+.github/workflows/deploy.yml         deploys the site to GitHub Pages on push to main
 ```
 
-The booking link (`https://calendly.com/ian-ianlloyd/30min`) is wired on both the "Book a call" circle and the About Me CTA.
+Palette: petrol, chalk and white, with burnt orange as the single accent. Type: Bricolage Grotesque for headings, Instrument Sans for everything else.
+
+The booking link (`https://calendly.com/ian-ianlloyd/30min`) is on the "Book a call" buttons on the first, About and Work with me cards.
 
 ## Deploying to ianlloyd.com
 
@@ -30,7 +30,3 @@ The booking link (`https://calendly.com/ian-ianlloyd/30min`) is wired on both th
      (If your DNS provider supports ALIAS/ANAME records instead, you can use one of those pointed at `<your-github-username>.github.io` instead of the four A records.)
    - `www` subdomain: a `CNAME` record pointing at `<your-github-username>.github.io`.
 4. Back in Settings → Pages, enter `ianlloyd.com` as the custom domain (this repo's `CNAME` file already has it set) and wait for DNS to verify, then enable "Enforce HTTPS".
-
-## Later
-
-- Add client logos to the Sectors tiles (`.sectors .nodes li`) — no changes made yet, noted for a follow-up.
