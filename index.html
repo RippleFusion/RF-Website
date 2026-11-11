@@ -182,15 +182,15 @@
   .small { font-size: 0.95rem; color: var(--muted); }
   .frame {
     justify-self: center;
-    width: min(100%, 420px);
-    aspect-ratio: 4 / 5;
-    max-height: calc(100svh - var(--tab) - 120px);
-    border-radius: var(--radius);
-    background: var(--petrol);
-    overflow: hidden;
+    width: min(100%, 440px);
+    max-height: calc(100svh - var(--tab) - 80px);
     display: flex; align-items: flex-end; justify-content: center;
   }
-  .frame img { display: block; height: 96%; width: auto; max-width: none; }
+  .frame img {
+    display: block; width: 100%; height: auto; max-height: inherit; object-fit: contain; object-position: center bottom;
+    -webkit-mask-image: linear-gradient(to bottom, #000 88%, transparent 100%);
+    mask-image: linear-gradient(to bottom, #000 88%, transparent 100%);
+  }
   @media (min-width: 900px) {
     .hero { grid-template-columns: 1.25fr 0.75fr; gap: clamp(32px, 6vw, 96px); }
     .frame { justify-self: end; }
@@ -204,36 +204,27 @@
   .dark .prose p { color: rgba(241, 239, 232, 0.88); }
   @media (min-width: 900px) { .about { grid-template-columns: 0.9fr 1.1fr; gap: clamp(32px, 6vw, 96px); align-items: center; } }
 
-  /* TRACK RECORD: a plain list, client on the left, result on the right */
-  .record { display: flex; flex-direction: column; gap: clamp(16px, 3vh, 32px); max-width: 1040px; width: 100%; margin: 0 auto; }
-  .list { list-style: none; padding: 0; }
-  .list li {
-    display: grid; grid-template-columns: minmax(0, 0.8fr) minmax(0, 1.2fr); gap: 8px 32px; align-items: baseline;
-    padding: clamp(7px, 1.7vh, 18px) 0; border-top: 1.5px solid rgba(16, 24, 32, 0.18);
-    font-size: clamp(1rem, min(1.25vw, 2.3vh), 1.2rem); line-height: 1.4;
-  }
-  .list li:last-child { border-bottom: 1.5px solid rgba(16, 24, 32, 0.18); }
-  .list .who { font-family: var(--display); font-weight: 800; letter-spacing: -0.01em; font-size: 1.1em; }
-  .list .who small { display: block; font: 400 0.9rem var(--body); letter-spacing: 0; color: var(--muted); margin-top: 2px; }
-  @media (max-width: 700px) { .list li { grid-template-columns: 1fr; } }
-
   /* CONTACT */
   .contact { display: grid; grid-template-columns: 1fr; gap: clamp(20px, 4vh, 40px); align-items: center; }
   .contact-head { display: flex; flex-direction: column; align-items: flex-start; gap: clamp(14px, 2.5vh, 24px); }
   .contact-head h2 { font-size: clamp(2.6rem, min(7vw, 12vh), 6.5rem); }
-  .contact-head p { font-size: clamp(1.05rem, 1.5vw, 1.3rem); line-height: 1.45; max-width: 32ch; color: rgba(241, 239, 232, 0.88); }
+  .contact-head p { font-size: clamp(1.05rem, 1.5vw, 1.3rem); line-height: 1.45; max-width: 32ch; }
   .ways { list-style: none; padding: 0; display: flex; flex-direction: column; }
   .ways a {
     display: flex; align-items: center; gap: 14px;
-    padding: clamp(10px, 1.8vh, 16px) 0; border-top: 1.5px solid rgba(241, 239, 232, 0.22);
+    padding: clamp(10px, 1.8vh, 16px) 0; border-top: 1.5px solid rgba(16, 24, 32, 0.18);
     font-size: clamp(1.05rem, min(1.6vw, 2.8vh), 1.4rem); font-weight: 500; text-decoration: none;
     transition: color .2s, padding-left .2s;
   }
-  .ways li:last-child a { border-bottom: 1.5px solid rgba(241, 239, 232, 0.22); }
-  .ways a:hover, .ways a:focus-visible { color: var(--orange-soft); padding-left: 6px; }
-  .ways a:focus-visible { outline: 3px solid var(--orange-soft); outline-offset: 2px; border-radius: 4px; }
-  .ways .ico { flex: none; color: var(--orange-soft); }
-  .contact-foot { display: flex; flex-wrap: wrap; justify-content: space-between; align-items: center; gap: 12px 24px; margin-top: clamp(16px, 3vh, 32px); font-size: 0.95rem; color: rgba(241, 239, 232, 0.7); }
+  .ways li:last-child a { border-bottom: 1.5px solid rgba(16, 24, 32, 0.18); }
+  .ways a:hover, .ways a:focus-visible { color: var(--orange); padding-left: 6px; }
+  .ways a:focus-visible { outline: 3px solid var(--orange); outline-offset: 2px; border-radius: 4px; }
+  .ways .ico { flex: none; color: var(--orange); }
+  .contact-foot { display: flex; flex-wrap: wrap; justify-content: space-between; align-items: center; gap: 12px 24px; margin-top: clamp(16px, 3vh, 32px); }
+  .socials { display: flex; align-items: center; gap: 8px; }
+  .socials a { display: flex; align-items: center; justify-content: center; width: 44px; height: 44px; border-radius: 50%; color: var(--ink); transition: color .2s, transform .2s; }
+  .socials a:hover, .socials a:focus-visible { color: var(--orange); transform: translateY(-2px); }
+  .socials a:focus-visible { outline: 3px solid var(--orange); outline-offset: 2px; }
   @media (min-width: 900px) { .contact { grid-template-columns: 1fr 1fr; gap: clamp(32px, 6vw, 96px); } }
 
   /* One entrance moment per page: content rises in, staggered, as the page lands */
@@ -261,16 +252,16 @@
 <body>
 <main>
   <section class="page light" style="--i:0" aria-label="Ian Lloyd">
-    <div class="tab"><span><span class="o">I</span>an Lloyd</span></div>
+    <div class="tab"><span><span class="o">I</span>an <span class="o">L</span>loyd</span></div>
     <div class="inner">
       <div class="hero">
         <div class="hero-text">
           <p class="avail rv" style="--d:0">Available now for interim engagements</p>
-          <h1 class="rv" style="--d:1"><span class="o">I</span>an Lloyd</h1>
+          <h1 class="rv" style="--d:1"><span class="o">I</span>an <span class="o">L</span>loyd</h1>
           <p class="lede rv" style="--d:2"><strong>Interim transformation director.</strong> Brought in by CEOs and private equity sponsors when a business needs to change how it operates as it scales or is sold.</p>
           <div class="actions rv" style="--d:3">
             <a class="btn" href="https://calendly.com/ian-ianlloyd/30min" target="_blank" rel="noopener" aria-label="Book a call (opens Calendly in a new tab)">Book a call</a>
-            <button class="link" type="button" data-go="2">See my track record</button>
+            <button class="link" type="button" data-go="2">Get in touch</button>
           </div>
           <p class="small rv" style="--d:4">Working through my company, <a href="https://ripplefusion.com" target="_blank" rel="noopener">Ripple Fusion</a>.</p>
         </div>
@@ -299,23 +290,7 @@
     </div>
   </section>
 
-  <section class="page chalk" style="--i:2" aria-label="Track record">
-    <div class="tab"><span>Track record</span></div>
-    <div class="inner">
-      <div class="record">
-        <h2 class="rv" style="--d:0">Results I've delivered.</h2>
-        <ul class="list">
-          <li class="rv" style="--d:1"><span class="who">Vistra<small>EQT</small></span><span>Led an $85m programme and 300+ people across four regions. It made the business sale-ready, a significant factor in the $6.5bn sale.</span></li>
-          <li class="rv" style="--d:2"><span class="who">British American Tobacco</span><span>Separated the business from its incumbent service provider over a two-year transition. $130m+ annual savings across 180+ markets.</span></li>
-          <li class="rv" style="--d:3"><span class="who">Pest Control Partnership<small>Partners Group</small></span><span>Built an acquisition production line: 9 businesses across 5 countries brought onto one way of working, at 2 a month.</span></li>
-          <li class="rv" style="--d:4"><span class="who">IQVIA<small>CPPIB and TPG</small></span><span>Turned around a failing $40m programme ahead of the IPO, restoring $50m of revenue.</span></li>
-          <li class="rv" style="--d:5"><span class="who">Marlink<small>Providence</small></span><span>Took over a stalled transformation and cut the projected overspend from $3m to $1m.</span></li>
-        </ul>
-      </div>
-    </div>
-  </section>
-
-  <section class="page dark" style="--i:3" aria-label="Work with me">
+  <section class="page chalk" style="--i:2" aria-label="Work with me">
     <div class="tab"><span>Work with me</span></div>
     <div class="inner">
       <div class="contact">
@@ -332,7 +307,11 @@
         </ul>
       </div>
       <div class="contact-foot">
-        <span>Also on <a href="https://ripplefusion.substack.com/" target="_blank" rel="noopener">Substack</a>, <a href="https://www.youtube.com/@realripplefusion" target="_blank" rel="noopener">YouTube</a> and <a href="https://www.instagram.com/realripplefusion" target="_blank" rel="noopener">Instagram</a>.</span>
+        <div class="socials">
+          <a href="https://www.instagram.com/realripplefusion" target="_blank" rel="noopener" aria-label="Instagram"><svg class="ico" viewBox="0 0 24 24" width="24" height="24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><rect x="2" y="2" width="20" height="20" rx="5" ry="5"/><path d="M16 11.37A4 4 0 1 1 12.63 8 4 4 0 0 1 16 11.37z"/><line x1="17.5" y1="6.5" x2="17.51" y2="6.5"/></svg></a>
+          <a href="https://www.youtube.com/@realripplefusion" target="_blank" rel="noopener" aria-label="YouTube"><svg class="ico" viewBox="0 0 24 24" width="24" height="24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M22.54 6.42a2.78 2.78 0 0 0-1.94-2C18.88 4 12 4 12 4s-6.88 0-8.6.46a2.78 2.78 0 0 0-1.94 2A29 29 0 0 0 1 11.75a29 29 0 0 0 .46 5.33A2.78 2.78 0 0 0 3.4 19c1.72.46 8.6.46 8.6.46s6.88 0 8.6-.46a2.78 2.78 0 0 0 1.94-2 29 29 0 0 0 .46-5.25 29 29 0 0 0-.46-5.33z"/><polygon points="9.75 15.02 15.5 11.75 9.75 8.48 9.75 15.02"/></svg></a>
+          <a href="https://ripplefusion.substack.com/" target="_blank" rel="noopener" aria-label="Substack"><svg class="ico" viewBox="0 0 24 24" width="21" height="21" fill="currentColor" aria-hidden="true"><path d="M22.539 8.242H1.46V5.406h21.08v2.836zM1.46 10.812V24L12 18.11 22.54 24V10.812H1.46zM22.54 0H1.46v2.836h21.08V0z"/></svg></a>
+        </div>
         <button class="link" type="button" data-go="0">Back to the top</button>
       </div>
     </div>

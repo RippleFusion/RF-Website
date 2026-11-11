@@ -1,12 +1,12 @@
 # ianlloyd.com
 
-Single-page personal site: four sticky-scroll cards — Ian Lloyd, About me, Track record, Work with me.
+Single-page personal site: three sticky-scroll cards — Ian Lloyd, About me, Work with me.
 
 ## Structure
 
 ```
 index.html                           markup, styles and script (all inline)
-assets/img/ian-lloyd-portrait.webp   portrait in the framed panel on the first card
+assets/img/ian-lloyd-portrait.webp   portrait on the first card
 CNAME                                tells GitHub Pages the custom domain
 .github/workflows/deploy.yml         deploys the site to GitHub Pages on push to main
 ```
