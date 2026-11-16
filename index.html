@@ -218,7 +218,10 @@
   .socials a { display: flex; align-items: center; justify-content: center; width: 44px; height: 44px; border-radius: 50%; color: var(--ink); transition: color .2s, transform .2s; }
   .socials a:hover, .socials a:focus-visible { color: var(--orange); transform: translateY(-2px); }
   .socials a:focus-visible { outline: 3px solid var(--orange); outline-offset: 2px; }
-  @media (min-width: 900px) { .contact { grid-template-columns: 1fr 1fr; gap: clamp(32px, 6vw, 96px); max-width: 1600px; margin: 0 auto; } }
+  @media (min-width: 900px) {
+    .contact { grid-template-columns: 1fr 1fr; gap: clamp(32px, 6vw, 96px); max-width: 1600px; margin: 0 auto; }
+    .contact-foot { max-width: 1600px; margin-left: auto; margin-right: auto; }
+  }
 
   /* One entrance moment per page: content rises in, staggered, as the page lands */
   html.js .page:not(.in) .rv { opacity: 0; }
@@ -288,7 +291,7 @@
       <div class="contact">
         <div class="contact-head">
           <h2 class="rv" style="--d:0">Let's talk.</h2>
-          <p class="rv" style="--d:1">Tell me what needs to change and by when. A first call takes 30 minutes.</p>
+          <p class="rv" style="--d:1">A first call takes 30 minutes.</p>
           <a class="btn rv" style="--d:2" href="https://calendly.com/ian-ianlloyd/30min" target="_blank" rel="noopener" aria-label="Book a call (opens Calendly in a new tab)">Book a call</a>
         </div>
         <ul class="ways">
