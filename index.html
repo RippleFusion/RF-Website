@@ -3,7 +3,7 @@
 <head>
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
-<title>Ian Lloyd — Interim Transformation Director</title>
+<title>Ian Lloyd | Interim Transformation Director</title>
 <meta name="description" content="Ian Lloyd is an interim transformation director helping private equity-backed leadership teams turn strategy into delivered, exit-ready results.">
 <link rel="canonical" href="https://ianlloyd.com/">
 <link rel="icon" type="image/svg+xml" href="assets/img/favicon.svg">
@@ -12,7 +12,7 @@
 
 <meta property="og:type" content="profile">
 <meta property="og:site_name" content="Ian Lloyd">
-<meta property="og:title" content="Ian Lloyd — Interim Transformation Director">
+<meta property="og:title" content="Ian Lloyd | Interim Transformation Director">
 <meta property="og:description" content="Ian Lloyd is an interim transformation director helping private equity-backed leadership teams turn strategy into delivered, exit-ready results.">
 <meta property="og:url" content="https://ianlloyd.com/">
 <meta property="og:image" content="https://ianlloyd.com/assets/img/ian-lloyd-portrait.webp">
@@ -21,7 +21,7 @@
 <meta property="profile:first_name" content="Ian">
 <meta property="profile:last_name" content="Lloyd">
 <meta name="twitter:card" content="summary_large_image">
-<meta name="twitter:title" content="Ian Lloyd — Interim Transformation Director">
+<meta name="twitter:title" content="Ian Lloyd | Interim Transformation Director">
 <meta name="twitter:description" content="Ian Lloyd is an interim transformation director helping private equity-backed leadership teams turn strategy into delivered, exit-ready results.">
 <meta name="twitter:image" content="https://ianlloyd.com/assets/img/ian-lloyd-portrait.webp">
 
@@ -401,7 +401,8 @@
       -webkit-mask-image: linear-gradient(to right, transparent, #000 4%, #000 86%, transparent);
       mask-image: linear-gradient(to right, transparent, #000 4%, #000 86%, transparent);
     }
-    .d .right { max-width: 460px; margin-left: -4vw; margin-right: auto; margin-top: 3.1vh; }
+    .d .inner { max-width: 1700px; margin: 0 auto; }
+    .d .right { max-width: 460px; margin: 3.1vh auto 0; }
     .d .ripples i { right: 30.9%; top: 56.4%; }
   }
 
@@ -466,7 +467,6 @@
   }
   .a .inner { position: relative; z-index: 1; }
   .a .hero-foot, .a h1 { max-width: 58%; margin-left: 4vw; }
-  @media (min-width: 1700px) { .a .hero-foot, .a h1 { margin-left: 16.5vw; } }
   @media (max-width: 700px) {
     .portrait { height: 40%; right: -6vw; }
     .a .hero-foot, .a h1 { max-width: none; margin-left: 0; }
@@ -509,7 +509,6 @@
   }
   .a .trading-as .brand:hover, .a .trading-as .brand:focus-visible { opacity: 1; }
   @media (max-width: 700px) { .portrait { height: 40%; max-width: 62vw; } .a .trading-as { left: clamp(24px, 6vw, 88px); right: auto; width: 46vw; } }
-  @media (min-width: 1700px) { .a .trading-as { left: calc(clamp(24px, 6vw, 88px) + 16.5vw); } }
 
   /* everything on the first page a touch bigger; Speak with Me moved further right */
   .a h1 .ian, .a h1 .lloyd { font-size: clamp(4.75rem, min(21vw, 22vh), 18rem); }
@@ -536,7 +535,7 @@
   @media (min-width: 701px) {
     .portrait {
       --k: 0.95;
-      left: auto; right: 15vw; transform: none;
+      left: auto; right: calc(clamp(24px, 6vw, 88px) + 4vw); transform: none;
       height: calc((100% - var(--tab)) * var(--k));
       bottom: calc((1 - var(--k)) * (100% - var(--tab)) - 10px);
       max-width: 60vw;
