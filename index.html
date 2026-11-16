@@ -195,7 +195,10 @@
   .prose { display: flex; flex-direction: column; gap: 1.1em; max-width: 62ch; }
   .prose p { font-size: clamp(1rem, min(1.25vw, 2.3vh), 1.2rem); line-height: 1.55; }
   .dark .prose p { color: rgba(241, 239, 232, 0.88); }
-  @media (min-width: 900px) { .about { grid-template-columns: 0.9fr 1.1fr; gap: clamp(32px, 6vw, 96px); align-items: center; } }
+  @media (min-width: 900px) {
+    .about { grid-template-columns: 0.9fr 1.1fr; gap: clamp(32px, 6vw, 96px); align-items: center; }
+    .about-head { padding-left: clamp(16px, 3vw, 48px); }
+  }
 
   /* CONTACT */
   .contact { display: grid; grid-template-columns: 1fr; gap: clamp(20px, 4vh, 40px); align-items: center; }
