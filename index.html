@@ -217,6 +217,7 @@
   .ways a:focus-visible { outline: 3px solid var(--orange); outline-offset: 2px; border-radius: 4px; }
   .ways .ico { flex: none; color: var(--orange); }
   .contact-foot { display: flex; flex-wrap: wrap; justify-content: space-between; align-items: center; gap: 12px 24px; margin-top: clamp(16px, 3vh, 32px); }
+  .socials-col { display: flex; flex-direction: column; align-items: flex-start; gap: 10px; }
   .socials { display: flex; align-items: center; gap: 8px; }
   .socials a { display: flex; align-items: center; justify-content: center; width: 44px; height: 44px; border-radius: 50%; color: var(--ink); transition: color .2s, transform .2s; }
   .socials a:hover, .socials a:focus-visible { color: var(--orange); transform: translateY(-2px); }
@@ -261,7 +262,6 @@
             <a class="btn" href="https://calendly.com/ian-ianlloyd/30min" target="_blank" rel="noopener" aria-label="Book a call (opens Calendly in a new tab)">Book a call</a>
             <button class="link" type="button" data-go="2">Get in touch</button>
           </div>
-          <p class="small rv" style="--d:4">Working through my company, <a href="https://ripplefusion.com" target="_blank" rel="noopener">Ripple Fusion</a>.</p>
         </div>
         <div class="frame rv" style="--d:2">
           <img alt="Ian Lloyd" width="719" height="1000" src="assets/img/ian-lloyd-portrait.webp">
@@ -305,10 +305,13 @@
         </ul>
       </div>
       <div class="contact-foot">
-        <div class="socials">
-          <a href="https://www.instagram.com/realripplefusion" target="_blank" rel="noopener" aria-label="Instagram"><svg class="ico" viewBox="0 0 24 24" width="24" height="24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><rect x="2" y="2" width="20" height="20" rx="5" ry="5"/><path d="M16 11.37A4 4 0 1 1 12.63 8 4 4 0 0 1 16 11.37z"/><line x1="17.5" y1="6.5" x2="17.51" y2="6.5"/></svg></a>
-          <a href="https://www.youtube.com/@realripplefusion" target="_blank" rel="noopener" aria-label="YouTube"><svg class="ico" viewBox="0 0 24 24" width="24" height="24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M22.54 6.42a2.78 2.78 0 0 0-1.94-2C18.88 4 12 4 12 4s-6.88 0-8.6.46a2.78 2.78 0 0 0-1.94 2A29 29 0 0 0 1 11.75a29 29 0 0 0 .46 5.33A2.78 2.78 0 0 0 3.4 19c1.72.46 8.6.46 8.6.46s6.88 0 8.6-.46a2.78 2.78 0 0 0 1.94-2 29 29 0 0 0 .46-5.25 29 29 0 0 0-.46-5.33z"/><polygon points="9.75 15.02 15.5 11.75 9.75 8.48 9.75 15.02"/></svg></a>
-          <a href="https://ripplefusion.substack.com/" target="_blank" rel="noopener" aria-label="Substack"><svg class="ico" viewBox="0 0 24 24" width="21" height="21" fill="currentColor" aria-hidden="true"><path d="M22.539 8.242H1.46V5.406h21.08v2.836zM1.46 10.812V24L12 18.11 22.54 24V10.812H1.46zM22.54 0H1.46v2.836h21.08V0z"/></svg></a>
+        <div class="socials-col">
+          <div class="socials">
+            <a href="https://www.instagram.com/realripplefusion" target="_blank" rel="noopener" aria-label="Instagram"><svg class="ico" viewBox="0 0 24 24" width="24" height="24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><rect x="2" y="2" width="20" height="20" rx="5" ry="5"/><path d="M16 11.37A4 4 0 1 1 12.63 8 4 4 0 0 1 16 11.37z"/><line x1="17.5" y1="6.5" x2="17.51" y2="6.5"/></svg></a>
+            <a href="https://www.youtube.com/@realripplefusion" target="_blank" rel="noopener" aria-label="YouTube"><svg class="ico" viewBox="0 0 24 24" width="24" height="24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M22.54 6.42a2.78 2.78 0 0 0-1.94-2C18.88 4 12 4 12 4s-6.88 0-8.6.46a2.78 2.78 0 0 0-1.94 2A29 29 0 0 0 1 11.75a29 29 0 0 0 .46 5.33A2.78 2.78 0 0 0 3.4 19c1.72.46 8.6.46 8.6.46s6.88 0 8.6-.46a2.78 2.78 0 0 0 1.94-2 29 29 0 0 0 .46-5.25 29 29 0 0 0-.46-5.33z"/><polygon points="9.75 15.02 15.5 11.75 9.75 8.48 9.75 15.02"/></svg></a>
+            <a href="https://ripplefusion.substack.com/" target="_blank" rel="noopener" aria-label="Substack"><svg class="ico" viewBox="0 0 24 24" width="21" height="21" fill="currentColor" aria-hidden="true"><path d="M22.539 8.242H1.46V5.406h21.08v2.836zM1.46 10.812V24L12 18.11 22.54 24V10.812H1.46zM22.54 0H1.46v2.836h21.08V0z"/></svg></a>
+          </div>
+          <p class="small">Working through my company, <a href="https://ripplefusion.com/" target="_blank" rel="noopener">Ripple Fusion</a>.</p>
         </div>
         <button class="link" type="button" data-go="0">Back to the top</button>
       </div>
